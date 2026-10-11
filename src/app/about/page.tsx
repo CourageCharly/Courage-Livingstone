@@ -81,7 +81,7 @@ export default function AboutPage() {
             </Link>
           </Rise>
           <div className="mt-12 grid gap-4">
-            {experience.map((item, index) => (
+            {experience.slice(0, 4).map((item, index) => (
               <Rise key={`${item.org}-${item.dates}`} delay={index * 0.05}>
                 <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:col-span-3">

@@ -67,13 +67,6 @@ export const experience = [
     body: "I take on frontend work for clients: responsive interfaces, design-to-code, and shipped web experiences using React and Next.js.",
   },
   {
-    title: "Product Designer",
-    org: "RLkids",
-    place: "Remote · Team",
-    dates: "2026",
-    body: "I worked with the team on Recycled Learning for Kids (rlkids.ai), an AI-powered platform that teaches children aged 7–14 real-world skills — leadership, entrepreneurship, strategy, and financial literacy — through stories, games, and personalised pathways.",
-  },
-  {
     title: "Lead Product Design Coach",
     org: "FadaQa",
     place: "Nigeria",

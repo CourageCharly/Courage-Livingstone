@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/lib";
-import { certifications, education, experience, training } from "@/lib/profile";
+import { experience, training } from "@/lib/profile";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
@@ -10,7 +10,7 @@ import ContactBanner from "@/components/shared/contact-banner";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Product design and frontend work by Courage Livingstone, from Tobams, freelance frontend, and RLkids to Hertechtrail, Tricode, ConnectTech, Synergy Book Club, and TechAscend.",
+    "Product design and frontend work by Courage Livingstone, from Tobams and freelance frontend to Hertechtrail, Tricode, ConnectTech, Synergy Book Club, and TechAscend.",
 };
 
 export default function ExperiencePage() {
@@ -67,39 +67,6 @@ export default function ExperiencePage() {
               </Rise>
             ))}
           </div>
-        </PageWrapper>
-      </section>
-
-      <section className="border-t border-white/10 py-20 md:py-28">
-        <PageWrapper className="grid gap-12 lg:grid-cols-2">
-          <Rise>
-            <p className="kicker text-lime">Education</p>
-            <ul className="mt-8 grid auto-rows-fr gap-4">
-              {education.map((item) => (
-                <li key={item.title} className="panel grid gap-4 p-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-16 sm:p-5">
-                  <span>
-                    <span className="block text-lg tracking-[-0.03em]">{item.title}</span>
-                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
-                  </span>
-                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">{item.dates}</span>
-                </li>
-              ))}
-            </ul>
-          </Rise>
-          <Rise>
-            <p className="kicker text-lime">Certificates</p>
-            <ul className="mt-8 space-y-4">
-              {certifications.map((item) => (
-                <li key={`${item.org}-${item.title}-${item.dates}`} className="panel grid gap-4 p-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-16">
-                  <span>
-                    <span className="block text-lg tracking-[-0.03em]">{item.title}</span>
-                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
-                  </span>
-                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">{item.dates}</span>
-                </li>
-              ))}
-            </ul>
-          </Rise>
         </PageWrapper>
       </section>
 

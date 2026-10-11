@@ -4,6 +4,7 @@ import { certifications, education, experience, training } from "@/lib/profile";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
+import CardStack from "@/components/shared/card-stack";
 import MaskLines from "@/components/shared/mask-lines";
 import ContactBanner from "@/components/shared/contact-banner";
 
@@ -30,20 +31,25 @@ export default function ExperiencePage() {
       </section>
 
       <section className="py-12 md:py-16">
-        <PageWrapper className="space-y-3">
-          {experience.map((item) => (
-            <article key={`${item.org}-${item.dates}`} className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
-              <div className="sm:col-span-4">
-                <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
-              </div>
-              <div className="min-w-0 sm:col-span-8">
-                <h2 className="text-lg tracking-[-0.03em] sm:text-xl">{item.title}</h2>
-                <p className="mt-0.5 text-sm text-lime">{item.org}</p>
-                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
-              </div>
-            </article>
-          ))}
+        <PageWrapper>
+          <CardStack>
+            {experience.map((item) => (
+              <article
+                key={`${item.org}-${item.dates}`}
+                className="panel grid gap-2 px-5 py-4 shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:grid-cols-12 sm:px-6 sm:py-5"
+              >
+                <div className="sm:col-span-4">
+                  <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
+                </div>
+                <div className="min-w-0 sm:col-span-8">
+                  <h2 className="text-lg tracking-[-0.03em] sm:text-xl">{item.title}</h2>
+                  <p className="mt-0.5 text-sm text-lime">{item.org}</p>
+                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+                </div>
+              </article>
+            ))}
+          </CardStack>
         </PageWrapper>
       </section>
 

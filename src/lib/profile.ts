@@ -165,7 +165,10 @@ export const notes = [
   {
     title: "Three.js particle system",
     body: "A 3D particle system that dances to hand gestures, built with Three.js in Gemini and VS Code.",
-    links: [{ label: "X", href: "https://x.com/Charlycourage/status/2020799866583085211" }],
+    links: [
+      { label: "X", href: "https://x.com/Charlycourage/status/2020799866583085211" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/couragecharles" },
+    ],
   },
   {
     title: "Teens in AI",

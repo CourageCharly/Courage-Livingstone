@@ -15,7 +15,7 @@ const ServicesGrid = () => {
           <h2 className="display mt-4 text-5xl sm:text-6xl">What I do</h2>
         </Rise>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {services.filter((item) => item.title !== "Review and programme design").map((item, index) => {
+          {services.filter((item) => item.index !== "05").map((item, index) => {
             const Icon = icons[index] ?? Compass;
             return (
               <Rise key={item.index} delay={index * 0.05} className="h-full">

@@ -112,7 +112,7 @@ function ProjectList({
                   {project.title}
                 </span>
                 <span className="mt-2 block font-mono text-[11px] tracking-[0.14em] text-lime/80 uppercase">
-                  {project.label}
+                  {project.label} · {project.year}
                 </span>
               </span>
               <Arrow />
@@ -120,7 +120,14 @@ function ProjectList({
             {mobileImages ? (
               <div className="pb-6 lg:hidden">
                 <div className="overflow-hidden rounded-[22px]">
-                  <ProjectMedia cover={project.cover} title={project.title} className="rounded-[22px]" />
+                  <ProjectMedia
+                    cover={project.cover}
+                    title={project.title}
+                    className="rounded-[22px]"
+                    imageClassName={
+                      project.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center"
+                    }
+                  />
                 </div>
                 <p className="mt-4 text-lg text-muted-foreground">{project.summary}</p>
               </div>
@@ -142,7 +149,9 @@ function Preview({ project }: { project: (typeof projects)[number] }) {
           title={project.title}
           priority
           className="rounded-none border-0"
-          imageClassName="object-contain object-center"
+          imageClassName={
+            project.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center"
+          }
         />
         <div className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
       </div>

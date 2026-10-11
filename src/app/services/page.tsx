@@ -19,7 +19,7 @@ const where = [
   "StreamVibe, Exyra, StyleLoom, and Fraktia.",
   "StreamVibe and Exyra, taken from design into a working interface.",
   "StreamVibe, from research and interface design through a production frontend.",
-  "Tobams Group × Access Bank AI Talent Competition and webinar.",
+  "Hertechtrail and the FadaQa Tech Scholarship Program.",
 ];
 
 export default function ServicesPage() {

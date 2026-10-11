@@ -3,6 +3,7 @@ import { site } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks from "@/components/layout/tech-marks";
 import Archive from "@/components/work/archive";
+import ContactBanner from "@/components/shared/contact-banner";
 import MaskLines from "@/components/shared/mask-lines";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function WorkPage() {
         </PageWrapper>
       </section>
       <Archive />
+      <ContactBanner />
     </>
   );
 }

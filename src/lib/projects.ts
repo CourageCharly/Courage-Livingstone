@@ -401,7 +401,7 @@ export const projects: Project[] = [
     label: "Product design · UX/UI",
     summary:
       "An independent homepage redesign concept focused on improving clarity, navigation, information hierarchy and the overall banking experience.",
-    cover: "/images/stanbic/board.png",
+    cover: "/images/stanbic/hero.png",
     tags: ["Product design", "UX/UI", "Banking", "Figma"],
     design: ["Homepage", "Navigation", "Information hierarchy", "Responsive screens"],
     development: [],

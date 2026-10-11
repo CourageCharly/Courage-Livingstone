@@ -39,6 +39,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const others = getOtherProjects(project.slug, 3);
+  const imageFit = project.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center";
 
   return (
     <article className="pb-8">
@@ -92,6 +93,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               alt={`${project.title} — ${project.screens[0]?.label ?? "interface"}`}
               sizes="(min-width: 1024px) 1280px, 100vw"
               className="aspect-[16/10]"
+              imageClassName={imageFit}
             />
           </Parallax>
         </div>
@@ -152,6 +154,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                       title={project.title}
                       alt={`${project.title} — ${project.screens[0].label}`}
                       className="aspect-[16/10]"
+                      imageClassName={imageFit}
                     />
                   </div>
                   <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
@@ -171,6 +174,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                         title={project.title}
                         alt={`${project.title} — ${screen.label}`}
                         className="aspect-[16/10]"
+                        imageClassName={imageFit}
                       />
                     </div>
                     <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ease } from "@/lib/motion";
-import { cn, projects, site } from "@/lib";
+import { cn, featuredProjects, site } from "@/lib";
 import ProjectMedia from "@/components/work/project-media";
 
 const Navbar = () => {
@@ -121,15 +121,15 @@ const Navbar = () => {
                         className="absolute top-full left-1/2 z-50 w-[640px] -translate-x-1/2 pt-5"
                       >
                         <div className="panel grid grid-cols-[1.1fr_0.9fr] gap-3 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-                          <Link href={`/work/${projects[preview].slug}`} className="overflow-hidden rounded-2xl">
+                          <Link href={`/work/${featuredProjects[preview].slug}`} className="overflow-hidden rounded-2xl">
                             <ProjectMedia
-                              cover={projects[preview].cover}
-                              title={projects[preview].title}
+                              cover={featuredProjects[preview].cover}
+                              title={featuredProjects[preview].title}
                               className="aspect-[16/10] rounded-2xl border-0"
                             />
                           </Link>
                           <ul className="flex flex-col justify-center">
-                            {projects.map((project, index) => (
+                            {featuredProjects.map((project, index) => (
                               <li key={project.slug}>
                                 <Link
                                   href={`/work/${project.slug}`}
@@ -222,7 +222,7 @@ const Navbar = () => {
             </ul>
             <div className="space-y-5">
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {projects.map((project) => (
+                {featuredProjects.map((project) => (
                   <Link
                     key={project.slug}
                     href={`/work/${project.slug}`}

@@ -19,7 +19,7 @@ const where = [
   "StreamVibe, Exyra, StyleLoom, and Fraktia.",
   "StreamVibe and Exyra, taken from design into a working interface.",
   "StreamVibe, from research and interface design through a production frontend.",
-  "Hertechtrail and the FadaQa Tech Scholarship Program.",
+  "Hertechtrail, the FadaQa Tech Scholarship Program, and Mentormesh.",
 ];
 
 export default function ServicesPage() {

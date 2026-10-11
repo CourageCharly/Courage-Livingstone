@@ -24,7 +24,8 @@ export default function WorkPage() {
           <p className="load-rise load-d2 mt-8 max-w-xl text-base text-muted-foreground sm:text-lg">
             Hover a project and the image changes. StreamVibe is shipped. Tobams Group is the company
             site. RLkids is a team EdTech product. StyleLoom is fashion ecommerce. Stanbic is an
-            independent homepage concept.
+            independent homepage concept. Farm Rush, Uncle Tobi, and the Portfolio Management App
+            sit in the archive from Behance.
           </p>
         </PageWrapper>
       </section>

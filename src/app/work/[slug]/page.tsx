@@ -39,7 +39,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const others = getOtherProjects(project.slug, 3);
-  const imageFit = project.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center";
+  const imageFit = ["stanbic", "farm-rush", "uncle-tobi"].includes(project.slug)
+    ? "object-cover object-center"
+    : "object-contain object-center";
 
   return (
     <article className="pb-8">

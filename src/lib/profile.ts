@@ -37,7 +37,7 @@ export const services = [
   {
     index: "05",
     title: "UI/UX (Product) Design Coaching",
-    body: "I coach people through product design: user-focused interfaces, the design process, and work they can put in a portfolio. At Hertechtrail and FadaQa that includes 500+ people trained in UI/UX fundamentals.",
+    body: "I coach people through product design: user-focused interfaces, the design process, and work they can put in a portfolio. At Hertechtrail, FadaQa, and Mentormesh that includes 500+ people trained in UI/UX fundamentals.",
   },
 ] as const;
 

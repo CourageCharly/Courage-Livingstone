@@ -24,6 +24,7 @@ export type Project = {
   highlights: string[];
   screens: ProjectScreen[];
   live?: string;
+  featured?: boolean;
   system: {
     typeface: string;
     colors: { name: string; value: string }[];
@@ -331,11 +332,11 @@ export const projects: Project[] = [
     slug: "fraktia",
     title: "Fraktia",
     year: "2025",
-    label: "AI product · UX/UI · Frontend",
+    label: "AI product · Team",
     summary:
-      "A futuristic AI product experience designed around intelligent agents, rewards and engaging digital interactions.",
+      "A futuristic AI product experience designed around intelligent agents, rewards and engaging digital interactions. I worked with the team on the product.",
     cover: "/images/fraktia/interface.jpg",
-    tags: ["AI", "Product design", "Frontend", "React", "Figma"],
+    tags: ["AI", "Product design", "Frontend", "Team"],
     design: ["Agent cards", "Rewards", "Dashboard", "Interactive states"],
     development: ["React", "Component states", "Responsive layout"],
     role: "Product Designer × Frontend Developer",
@@ -344,16 +345,16 @@ export const projects: Project[] = [
     challenge:
       "An agent product can look clever and still be unclear. Fraktia needed a dashboard where the agent, the reward, and the next step are obvious.",
     approach:
-      "I designed agent cards as the unit of the product, then the dashboard around them. Interactive states were drawn before they were built.",
+      "I worked with the team. Agent cards became the unit of the product, then the dashboard around them. Interactive states were drawn before they were built.",
     outcome:
       "Fraktia reads as one AI product: a dashboard of agents, a reward state, and an interaction that stays on the same surface.",
     build:
-      "The interface is built as reusable React components. Each agent card carries its own state, and the layout holds from a phone to a desktop dashboard.",
+      "This is a team product. The interface is built as reusable React components. Each agent card carries its own state, and the layout holds from a phone to a desktop dashboard.",
     highlights: [
+      "A team project, not a solo build",
       "Made the agent card the unit of the interface",
       "Drew hover, active, and reward states before code",
       "Kept the dashboard quiet enough to read",
-      "Built the same components for phone and desktop",
     ],
     screens: [
       {
@@ -539,9 +540,220 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: "farm-rush",
+    title: "Farm Rush",
+    year: "2025",
+    featured: false,
+    label: "Game · Product design",
+    summary:
+      "A game landing page for a fast-paced farming adventure: harvest, upgrade, and outplay friends on one colourful field.",
+    cover: "/images/farm-rush/landing.png",
+    tags: ["Product design", "Game", "Landing page", "Figma"],
+    design: ["Landing page", "Hero", "Game info", "Store badges"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX/UI"],
+    stack: ["Figma", "Canva"],
+    challenge:
+      "A farming game had to feel like play in the first screen: store, harvest, and a reason to tap Play now.",
+    approach:
+      "I designed a landing page around one hero, a Play now action, and short beats for farming, expeditions, and rewards.",
+    outcome:
+      "Farm Rush reads as a game you can join: a cartoon hero, store badges, and a dark field for the rest of the product.",
+    build:
+      "This is a design case from Behance, drawn in Figma for a Game Nest landing page. It is not a production frontend.",
+    highlights: [
+      "One hero that names the game and points to the stores",
+      "Play now sits on the same field as harvest and upgrade",
+      "Fun awaits cards for farming, expeditions, and rewards",
+      "Game info, platforms, and a subscribe path at the end",
+    ],
+    screens: [
+      {
+        cover: "/images/farm-rush/landing.png",
+        label: "Landing",
+        caption: "The Farm Rush hero: a farmer, a horse, and the stores.",
+      },
+      {
+        cover: "/images/farm-rush/play.png",
+        label: "Play",
+        caption: "Welcome, Play now, and the first two game stills.",
+      },
+      {
+        cover: "/images/farm-rush/fun.png",
+        label: "Fun awaits",
+        caption: "Farming, expeditions, and rewards as three cards.",
+      },
+      {
+        cover: "/images/farm-rush/cover.png",
+        label: "Win",
+        caption: "A Farm Rush win frame — Yay — on the wood field.",
+      },
+      {
+        cover: "/images/farm-rush/info.png",
+        label: "Info",
+        caption: "Game info, other titles, and a subscribe path.",
+      },
+    ],
+    system: {
+      typeface: "Fredoka",
+      colors: [
+        { name: "Navy", value: "#1A1440" },
+        { name: "Orange", value: "#F0A03A" },
+        { name: "Sky", value: "#7EC8E3" },
+        { name: "Grass", value: "#5CAD3A" },
+        { name: "Type", value: "#FFFFFF" },
+        { name: "Wood", value: "#C47A3A" },
+      ],
+    },
+  },
+  {
+    slug: "uncle-tobi",
+    title: "Uncle Tobi",
+    year: "2025",
+    featured: false,
+    label: "Ecommerce · Product design",
+    summary:
+      "A recipes and tips site for Nigerian cooking — jollof, egusi, video tutorials, and a shop that feels like a home-cooked meal.",
+    cover: "/images/uncle-tobi/home.png",
+    tags: ["Product design", "Ecommerce", "Web design", "Figma"],
+    design: ["Homepage", "Recipes listing", "Cooking tips", "Video tutorials"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX/UI"],
+    stack: ["Figma"],
+    challenge:
+      "A recipes site had to feel warm and easy: search a dish, read a tip, watch a tutorial, without looking like a catalogue.",
+    approach:
+      "I designed Uncle Tobi as a kitchen table. Hero, latest recipes, cooking tips, and video tutorials sit in one scroll, with a shop path in the header.",
+    outcome:
+      "uncletobi.shop is a design: Simple and Tasty Recipes, jollof and egusi on the first screen, and a recipes listing with saved dishes beside it.",
+    build:
+      "This is a design case from Behance, drawn in Figma. It is not a production frontend.",
+    highlights: [
+      "A warm hero with search for a recipe or a cooking tip",
+      "Latest recipes lead with jollof, egusi, and moi moi",
+      "Cooking tips and video tutorials on the same home scroll",
+      "A recipes listing with saved dishes and recommended tutorials",
+    ],
+    screens: [
+      {
+        cover: "/images/uncle-tobi/home.png",
+        label: "Home",
+        caption: "Simple and Tasty Recipes — search, then the latest dishes.",
+      },
+      {
+        cover: "/images/uncle-tobi/listing.png",
+        label: "Recipes",
+        caption: "The recipes listing with saved dishes and tutorials beside it.",
+      },
+      {
+        cover: "/images/uncle-tobi/tips.png",
+        label: "Tips",
+        caption: "Cooking tips: pounded yam, boli, ofada rice.",
+      },
+      {
+        cover: "/images/uncle-tobi/videos.png",
+        label: "Tutorials",
+        caption: "Video tutorials and a shop signup at the end of home.",
+      },
+      {
+        cover: "/images/uncle-tobi/cover.png",
+        label: "Poster",
+        caption: "The Uncle Tobi home, held as a poster in a bright room.",
+      },
+    ],
+    system: {
+      typeface: "Plus Jakarta Sans",
+      colors: [
+        { name: "Leaf", value: "#7CB342" },
+        { name: "Ink", value: "#1A2332" },
+        { name: "Paper", value: "#FFFFFF" },
+        { name: "Muted", value: "#6B7280" },
+        { name: "Field", value: "#1B2430" },
+        { name: "Line", value: "#E5E7EB" },
+      ],
+    },
+  },
+  {
+    slug: "portfolio-app",
+    title: "Portfolio Management App",
+    year: "2025",
+    featured: false,
+    label: "Product design · Mobile",
+    summary:
+      "A light and dark mobile UI for watching a portfolio: funds, insights, and invest, without noise.",
+    cover: "/images/portfolio/cover.png",
+    tags: ["Product design", "Mobile", "Fintech", "Figma"],
+    design: ["Light mode", "Dark mode", "Portfolio home", "Invest actions"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX/UI"],
+    stack: ["Figma"],
+    challenge:
+      "A portfolio app can look busy. This one had to stay simple in daylight and at night, with Add funds and Invest now easy to find.",
+    approach:
+      "I designed one layout for light and dark. Soft space in the day, a focused field at night, and the same actions in both.",
+    outcome:
+      "The app holds a total, three sleeves, and a path into funds, invest, and insights — in light, in dark, and on a watch.",
+    build:
+      "This is a design case from Behance, drawn in Figma with light and dark themes. It is not a production frontend.",
+    highlights: [
+      "One layout for light and dark, not two products",
+      "Add funds, Invest now, and View insights as the three actions",
+      "Tech, energy, and real estate sleeves on the first screen",
+      "The same home on phone, tablet, and watch mockups",
+    ],
+    screens: [
+      {
+        cover: "/images/portfolio/cover.png",
+        label: "Themes",
+        caption: "Light and dark on the same home: portfolio value and three sleeves.",
+      },
+      {
+        cover: "/images/portfolio/light.jpeg",
+        label: "Light",
+        caption: "The light home on a phone — Add funds, Invest now, View insights.",
+      },
+      {
+        cover: "/images/portfolio/flow.png",
+        label: "In hand",
+        caption: "The same light home, held in hand.",
+      },
+      {
+        cover: "/images/portfolio/dark.jpeg",
+        label: "Dark",
+        caption: "Dark mode on a tablet: the same sleeves, a quieter field.",
+      },
+      {
+        cover: "/images/portfolio/phone.jpeg",
+        label: "Phone",
+        caption: "The light home on a phone, held against colour.",
+      },
+      {
+        cover: "/images/portfolio/mock.jpeg",
+        label: "Watch",
+        caption: "Portfolio value on a watch — the same numbers, a smaller face.",
+      },
+    ],
+    system: {
+      typeface: "Inter",
+      colors: [
+        { name: "Field", value: "#0B0B0B" },
+        { name: "Paper", value: "#F7F7F8" },
+        { name: "Type", value: "#111111" },
+        { name: "Action", value: "#4C6FFF" },
+        { name: "Gain", value: "#1DBF73" },
+        { name: "Card", value: "#1A1A1A" },
+      ],
+    },
+  },
 ];
 
 projects.sort((a, b) => Number(b.year) - Number(a.year));
+
+export const featuredProjects = projects.filter((project) => project.featured !== false);
 
 export const getProject = (slug: string) => projects.find((project) => project.slug === slug);
 

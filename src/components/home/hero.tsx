@@ -31,7 +31,7 @@ function Line({
 }) {
   const at = accent ? text.indexOf(accent) : -1;
   return (
-    <span className="relative block whitespace-nowrap">
+    <span className="relative block whitespace-nowrap max-[360px]:whitespace-normal">
       {caret === 0 ? <span className="caret absolute top-[0.12em] left-0" /> : null}
       {text.split("").map((character, index) => {
         const lime = at >= 0 && index >= at && index < at + accent.length;

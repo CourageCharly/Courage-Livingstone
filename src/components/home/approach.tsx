@@ -12,7 +12,7 @@ const ServicesGrid = () => {
       <PageWrapper>
         <Rise>
           <p className="kicker text-lime">Services</p>
-          <h2 className="display mt-4 text-5xl sm:text-6xl">What I do</h2>
+          <h2 className="display mt-4 text-4xl sm:text-6xl">What I do</h2>
         </Rise>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {services.filter((item) => item.index !== "05").map((item, index) => {

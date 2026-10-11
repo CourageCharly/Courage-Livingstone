@@ -92,8 +92,8 @@ export default function AboutPage() {
                       {item.title}
                       <span className="text-muted-foreground"> · {item.org}</span>
                     </h3>
-                    <p className="mt-0.5 text-lg text-muted-foreground">{item.place}</p>
-                    <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{item.body}</p>
+                    <p className="mt-0.5 text-base text-muted-foreground sm:text-lg">{item.place}</p>
+                    <p className="mt-2 max-w-2xl text-base text-muted-foreground sm:text-lg">{item.body}</p>
                   </div>
                 </article>
               </Rise>
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <p className="kicker text-lime">Also</p>
             <h2 className="display mt-4 text-4xl sm:text-6xl">In public.</h2>
           </Rise>
-          <div className="mt-12 grid grid-cols-2 gap-4">
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {notes.map((note, index) => (
               <Rise key={note.title} delay={index * 0.06} className="h-full min-w-0">
                 <article className="panel flex h-full flex-col p-6 sm:p-8">

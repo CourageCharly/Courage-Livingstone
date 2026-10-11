@@ -10,6 +10,7 @@ type Props = {
   imageClassName?: string;
   alt?: string;
   sizes?: string;
+  loading?: "eager" | "lazy";
 };
 
 const ProjectMedia = ({
@@ -20,6 +21,7 @@ const ProjectMedia = ({
   imageClassName,
   alt,
   sizes = "(min-width: 1024px) 960px, 100vw",
+  loading,
 }: Props) => {
   const frame = cover.startsWith("frame:") ? cover.slice("frame:".length) : null;
 
@@ -34,6 +36,7 @@ const ProjectMedia = ({
           fill
           priority={priority}
           quality={90}
+          loading={priority ? undefined : loading}
           className={cn("object-contain object-center", imageClassName)}
           sizes={sizes}
         />

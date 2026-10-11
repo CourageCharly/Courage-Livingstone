@@ -21,7 +21,8 @@ const Archive = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
     if (reduce) return;
-    const next = Math.min(projects.length - 1, Math.max(0, Math.floor(value * projects.length)));
+    const last = projects.length - 1;
+    const next = Math.min(last, Math.max(0, Math.round(value * last)));
     setActive((current) => (current === next ? current : next));
   });
 
@@ -53,15 +54,15 @@ const Archive = () => {
       <section
         ref={sectionRef}
         className="relative hidden lg:block"
-        style={{ height: `${projects.length * 78}vh` }}
+        style={{ height: `${(projects.length + 0.5) * 78}vh` }}
       >
         <div className="sticky top-[4.5rem] overflow-hidden pt-4" style={{ height: "calc(100svh - 4.5rem)" }}>
           <PageWrapper className="h-full">
             <div
-              className="grid h-full content-center items-stretch gap-10 lg:grid-cols-12"
+              className="grid h-full content-start items-stretch gap-10 pt-6 lg:grid-cols-12 lg:content-center lg:pt-0"
               onMouseLeave={() => setHovered(null)}
             >
-              <div className="lg:col-span-5">
+              <div className="flex h-full min-h-0 flex-col justify-center overflow-y-auto lg:col-span-5">
                 <ProjectList active={shown} onHover={setHovered} />
               </div>
               <div className="relative hidden min-h-[16rem] lg:col-span-7 lg:block">
@@ -96,7 +97,7 @@ function ProjectList({
               onMouseEnter={() => onHover(index)}
               onFocus={() => onHover(index)}
               className={cn(
-                "group flex items-center justify-between gap-4 py-6 outline-none transition-colors",
+                "group flex items-center justify-between gap-4 py-4 outline-none transition-colors lg:py-5",
                 selected ? "text-foreground" : "text-muted-foreground hover:text-foreground",
               )}
             >

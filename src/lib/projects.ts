@@ -182,6 +182,84 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "rlkids",
+    title: "RLkids",
+    year: "2026",
+    label: "Product design · Team",
+    summary:
+      "Recycled Learning for Kids is an AI-powered platform for ages 7–14. I worked with the team on the product: stories, games, and personalised pathways for real-world skills.",
+    cover: "/images/rlkids/live-home.jpg",
+    live: "https://rlkids.ai/",
+    tags: ["Product design", "EdTech", "AI", "Team"],
+    design: ["Homepage", "Learning paths", "Series catalog", "App surfaces"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX/UI"],
+    stack: ["Figma"],
+    challenge:
+      "Kids aged 7–14 needed a place to learn leadership, AI, finance, and strategy that felt like play, not a classroom.",
+    approach:
+      "I worked with the team on Recycled Learning for Kids. The live product mixes story-led series, gamified lessons, and an AI path that follows each child’s pace.",
+    outcome:
+      "rlkids.ai is a live learning product: a homepage, a series catalog, pricing, and an app that puts books, badges, and progress in one place.",
+    build:
+      "This is a team product. The screens below are from the live site, not a solo build.",
+    highlights: [
+      "A team project, not a solo redesign",
+      "Home, series, pricing, and the app as one learning path",
+      "AI-personalised lessons wrapped in stories and games",
+      "Skills in AI, leadership, strategy, sustainability, entrepreneurship, and finance",
+    ],
+    screens: [
+      {
+        cover: "/images/rlkids/live-home.jpg",
+        label: "Homepage",
+        caption: "rlkids.ai — building future-ready kids through AI-powered learning.",
+      },
+      {
+        cover: "/images/rlkids/live-features.jpg",
+        label: "Learning model",
+        caption: "AI-powered paths, 162 life-skills series, and gamified lessons.",
+      },
+      {
+        cover: "/images/rlkids/live-devices.jpg",
+        label: "App",
+        caption: "Read mode, quizzes, progress, and badges on the RLKids mobile app.",
+      },
+      {
+        cover: "/images/rlkids/live-waitlist.jpg",
+        label: "Product",
+        caption: "Learner home and a teacher dashboard on the live product.",
+      },
+      {
+        cover: "/images/rlkids/live-app.jpg",
+        label: "Series",
+        caption: "Think Sustainability, Think Finance, and the rest of the catalog.",
+      },
+      {
+        cover: "/images/rlkids/live-pricing.jpg",
+        label: "Pricing",
+        caption: "Read, or Read + Play & Learn, on rlkids.ai.",
+      },
+      {
+        cover: "/images/rlkids/live-about.jpg",
+        label: "About",
+        caption: "The team’s mission: real-world skills for a better future.",
+      },
+    ],
+    system: {
+      typeface: "Poppins",
+      colors: [
+        { name: "Forest", value: "#0B3D2E" },
+        { name: "Leaf", value: "#2FA35A" },
+        { name: "Sun", value: "#F5C518" },
+        { name: "Blue", value: "#1B4F9A" },
+        { name: "Paper", value: "#EEF6EE" },
+        { name: "Ink", value: "#14201A" },
+      ],
+    },
+  },
+  {
     slug: "exyra",
     title: "Exyra",
     year: "2025",

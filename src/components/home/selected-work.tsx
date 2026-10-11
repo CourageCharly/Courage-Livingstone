@@ -20,7 +20,8 @@ const SelectedWork = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
     if (reduce) return;
-    const next = Math.min(projects.length - 1, Math.max(0, Math.floor(value * projects.length)));
+    const last = projects.length - 1;
+    const next = Math.min(last, Math.max(0, Math.round(value * last)));
     setActive((current) => (current === next ? current : next));
   });
 
@@ -87,7 +88,7 @@ const SelectedWork = () => {
       ref={sectionRef}
       data-work-stage={project.slug}
       className="relative hidden border-t border-border lg:block"
-      style={{ height: `${projects.length * 78}vh` }}
+      style={{ height: `${(projects.length + 0.5) * 78}vh` }}
     >
       <div className="sticky top-[4.5rem] overflow-hidden pt-4" style={{ height: "calc(100svh - 4.5rem)" }}>
         <PageWrapper className="h-full">

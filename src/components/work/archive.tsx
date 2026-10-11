@@ -97,7 +97,13 @@ const Archive = () => {
               <Link href={`/work/${current.slug}`} data-cursor="Open" className="group block outline-none">
                 <div className="relative overflow-hidden rounded-[24px] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
                   <TechCorners />
-                  <ProjectMedia cover={current.cover} title={current.title} priority className="rounded-none border-0" />
+                  <ProjectMedia
+                    cover={current.cover}
+                    title={current.title}
+                    priority
+                    className="rounded-none border-0"
+                    imageClassName="object-contain object-center"
+                  />
                   <div className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-6">

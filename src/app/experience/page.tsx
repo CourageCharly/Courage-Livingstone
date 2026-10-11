@@ -29,22 +29,20 @@ export default function ExperiencePage() {
         </PageWrapper>
       </section>
 
-      <section className="py-16 md:py-24">
-        <PageWrapper className="space-y-4">
-          {experience.map((item, index) => (
-            <Rise key={`${item.org}-${item.dates}`} delay={index * 0.04}>
-              <article className="panel grid gap-4 p-6 sm:grid-cols-12 sm:p-8">
-                <div className="sm:col-span-4">
-                  <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
-                  <p className="mt-3 text-sm text-muted-foreground">{item.place}</p>
-                </div>
-                <div className="min-w-0 sm:col-span-8">
-                  <h2 className="text-2xl tracking-[-0.04em] sm:text-3xl">{item.title}</h2>
-                  <p className="mt-1 text-lime">{item.org}</p>
-                  <p className="mt-4 max-w-2xl text-muted-foreground">{item.body}</p>
-                </div>
-              </article>
-            </Rise>
+      <section className="py-12 md:py-16">
+        <PageWrapper className="space-y-3">
+          {experience.map((item) => (
+            <article key={`${item.org}-${item.dates}`} className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
+              <div className="sm:col-span-4">
+                <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
+              </div>
+              <div className="min-w-0 sm:col-span-8">
+                <h2 className="text-lg tracking-[-0.03em] sm:text-xl">{item.title}</h2>
+                <p className="mt-0.5 text-sm text-lime">{item.org}</p>
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+              </div>
+            </article>
           ))}
         </PageWrapper>
       </section>

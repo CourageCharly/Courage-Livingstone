@@ -87,17 +87,17 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-4">
             {experience.map((item, index) => (
               <Rise key={`${item.org}-${item.dates}`} delay={index * 0.05}>
-                <article className="panel grid gap-3 p-6 sm:grid-cols-12 sm:p-8">
+                <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:col-span-3">
                     {item.dates}
                   </p>
                   <div className="min-w-0 sm:col-span-9">
-                    <h3 className="text-xl tracking-[-0.03em]">
+                    <h3 className="text-lg tracking-[-0.03em]">
                       {item.title}
                       <span className="text-muted-foreground"> · {item.org}</span>
                     </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
-                    <p className="mt-3 max-w-2xl text-muted-foreground">{item.body}</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{item.place}</p>
+                    <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
                   </div>
                 </article>
               </Rise>

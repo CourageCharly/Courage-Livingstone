@@ -27,22 +27,17 @@ const ContactClose = () => {
           >
             Email
           </a>
-          <a
-            href={site.socials[0].href}
-            target="_blank"
-            rel="noreferrer"
-            className="nav-link outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={site.socials[2].href}
-            target="_blank"
-            rel="noreferrer"
-            className="nav-link outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
-          >
-            GitHub
-          </a>
+          {site.socials.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </PageWrapper>
     </section>

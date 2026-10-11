@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               priority
               alt={`${project.title} — ${project.screens[0]?.label ?? "interface"}`}
               sizes="(min-width: 1024px) 1280px, 100vw"
-              className="aspect-[16/10] md:aspect-[16/9]"
+              className="aspect-[16/10]"
             />
           </Parallax>
         </div>
@@ -151,7 +151,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                       cover={project.screens[0].cover}
                       title={project.title}
                       alt={`${project.title} — ${project.screens[0].label}`}
-                      className="aspect-[16/9]"
+                      className="aspect-[16/10]"
                     />
                   </div>
                   <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
@@ -239,7 +239,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                   cover={item.cover}
                   title={item.title}
                   className="w-full rounded-none border-0"
-                  imageClassName="object-cover object-center"
+                  imageClassName="object-contain object-center"
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
                 <div className="p-5">

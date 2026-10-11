@@ -34,7 +34,7 @@ const ProjectMedia = ({
           fill
           priority={priority}
           quality={90}
-          className={cn("object-cover object-center", imageClassName)}
+          className={cn("object-contain object-center", imageClassName)}
           sizes={sizes}
         />
       )}

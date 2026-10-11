@@ -19,7 +19,6 @@ export const site = {
     { href: "/contact", label: "Contact" },
   ],
   socials: [
-    { href: "https://www.linkedin.com/in/couragecharles", label: "LinkedIn" },
     { href: "https://www.behance.net/courageeze1", label: "Behance" },
     { href: "https://github.com/couragecharles", label: "GitHub" },
     { href: "https://x.com/Charlycourage", label: "X" },

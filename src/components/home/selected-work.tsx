@@ -45,8 +45,8 @@ const SelectedWork = () => {
   }
 
   return (
-    <div id="work">
-    <section className="border-t border-border py-12 lg:hidden">
+    <div id="work" className="pb-20 md:pb-28">
+    <section className="border-t border-border py-20 lg:hidden">
       <PageWrapper>
         <div className="mb-6 flex items-end justify-between gap-4">
           <h2 className="display min-w-0 text-[1.85rem] sm:text-4xl">Selected work</h2>
@@ -87,7 +87,7 @@ const SelectedWork = () => {
       data-work-pin
       style={{ height: `${(featuredProjects.length + 0.5) * 78}vh` }}
     >
-      <div className="sticky top-[4.5rem] overflow-hidden pt-4" style={{ height: "calc(100svh - 4.5rem)" }}>
+      <div className="sticky top-[4.5rem] overflow-hidden pt-8 pb-8" style={{ height: "calc(100svh - 4.5rem)" }}>
         <PageWrapper className="h-full">
         <div className="grid h-full content-center items-stretch gap-5 lg:grid-cols-12" onMouseLeave={() => setHovered(null)}>
           <div className="lg:col-span-5">

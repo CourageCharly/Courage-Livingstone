@@ -66,11 +66,6 @@ export default function AboutPage() {
               </Rise>
             ))}
           </div>
-          <Rise className="mt-8">
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              The coaching is at Hertechtrail, a women-in-tech academy. I teach UI/UX fundamentals, design thinking, and how a mockup becomes an interface that can ship.
-            </p>
-          </Rise>
         </PageWrapper>
       </section>
 

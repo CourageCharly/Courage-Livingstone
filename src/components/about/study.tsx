@@ -83,10 +83,17 @@ const Study = () => {
               </Rise>
               <div ref={cardsRef} className="mt-10 grid gap-3">
                 {education.map((item) => (
-                  <article key={item.title} className="panel px-4 py-3 sm:px-5 sm:py-3.5">
-                    <p className="text-2xl tracking-[-0.04em]">{item.title}</p>
-                    <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
-                    <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
+                  <article
+                    key={item.title}
+                    className="panel grid gap-4 px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-16 sm:px-5 sm:py-3.5"
+                  >
+                    <span>
+                      <span className="block text-2xl tracking-[-0.04em]">{item.title}</span>
+                      <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                    </span>
+                    <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">
+                      {item.dates}
+                    </span>
                   </article>
                 ))}
               </div>

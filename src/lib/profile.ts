@@ -7,7 +7,7 @@ export const about = {
   ],
   marks: [
     "3+ years of product design experience",
-    "500+ women trained in UI/UX fundamentals",
+    "500+ people trained in UI/UX fundamentals",
     "Frontend that brings sites like StreamVibe and Exyra to life",
     "Reviewed 40+ video applicants for Tobams × Access",
   ],
@@ -85,7 +85,7 @@ export const experience = [
     org: "Hertechtrail",
     place: "Nigeria",
     dates: "2024 — Present",
-    body: "I coach designers through UI/UX fundamentals, design thinking, and the move from a mockup to an interface that can ship. That work has reached 500+ women.",
+    body: "I coach designers through UI/UX fundamentals, design thinking, and the move from a mockup to an interface that can ship. That work has reached 500+ people.",
   },
   {
     title: "Associate Product Designer",

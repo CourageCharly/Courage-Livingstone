@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <article>
-      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
+      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
         <TechMarks />
         <PageWrapper className="relative">
           <p className="kicker text-lime">Experience — {site.location}</p>
@@ -29,7 +29,7 @@ export default function ExperiencePage() {
         </PageWrapper>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="pb-20 md:pb-28">
         <PageWrapper className="space-y-3">
           {experience.map((item, index) => (
             <Rise key={`${item.org}-${item.dates}`} delay={index * 0.04}>
@@ -76,10 +76,12 @@ export default function ExperiencePage() {
             <p className="kicker text-lime">Education</p>
             <ul className="mt-8 grid auto-rows-fr gap-4">
               {education.map((item) => (
-                <li key={item.title} className="panel p-4 sm:p-5">
-                  <p className="text-lg tracking-[-0.03em]">{item.title}</p>
-                  <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
-                  <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
+                <li key={item.title} className="panel grid gap-4 p-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-16 sm:p-5">
+                  <span>
+                    <span className="block text-lg tracking-[-0.03em]">{item.title}</span>
+                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                  </span>
+                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">{item.dates}</span>
                 </li>
               ))}
             </ul>

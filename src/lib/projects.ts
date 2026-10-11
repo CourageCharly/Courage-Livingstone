@@ -755,6 +755,10 @@ projects.sort((a, b) => Number(b.year) - Number(a.year));
 
 export const featuredProjects = projects.filter((project) => project.featured !== false);
 
+export const navProjects = projects.filter(
+  (project) => project.featured !== false || project.slug === "farm-rush" || project.slug === "uncle-tobi",
+);
+
 export const fillsFrame = (slug: string) =>
   slug === "stanbic" || slug === "farm-rush" || slug === "uncle-tobi";
 

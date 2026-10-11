@@ -40,7 +40,7 @@ const Archive = () => {
           <div className="lg:col-span-5">
             <ProjectList active={shown} onHover={setHovered} mobileImages />
           </div>
-          <div className="relative hidden lg:col-span-7 lg:block">
+          <div className="relative hidden min-h-[28rem] lg:col-span-7 lg:flex lg:flex-col">
             <Preview shown={shown} project={current} />
           </div>
         </div>
@@ -73,7 +73,7 @@ const Archive = () => {
               >
                 <ProjectList active={shown} onHover={setHovered} />
               </div>
-              <div className="relative hidden min-h-0 lg:col-span-7 lg:block">
+              <div className="relative hidden min-h-0 lg:col-span-7 lg:flex lg:flex-col">
                 <Preview shown={shown} project={current} />
               </div>
             </div>
@@ -151,13 +151,13 @@ function Preview({
   project: (typeof projects)[number];
 }) {
   return (
-    <Link href={`/work/${project.slug}`} data-cursor="Open" className="group flex h-full flex-col justify-center outline-none">
-      <div className="relative overflow-hidden rounded-[24px] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+    <Link href={`/work/${project.slug}`} data-cursor="Open" className="group flex h-full min-h-0 flex-col outline-none">
+      <div className="relative min-h-0 flex-1 overflow-hidden rounded-[24px] border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
         <TechCorners />
         {projects.map((item, index) => (
           <div
             key={item.slug}
-            className={cn(index === 0 ? "relative" : "absolute inset-0", shown === index ? "z-[1] opacity-100" : "z-0 opacity-0")}
+            className={cn("absolute inset-0", shown === index ? "z-[1] opacity-100" : "z-0 opacity-0")}
             aria-hidden={shown !== index}
           >
             <ProjectMedia
@@ -165,7 +165,7 @@ function Preview({
               title={item.title}
               priority={index < 3}
               loading="eager"
-              className="rounded-none border-0"
+              className="!aspect-auto h-full w-full rounded-none border-0"
               imageClassName={
                 fillsFrame(item.slug) ? "!object-cover object-center" : "object-contain object-center"
               }
@@ -174,7 +174,7 @@ function Preview({
         ))}
         <div className="hero-scan pointer-events-none absolute inset-x-0 top-0 z-[2] h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
       </div>
-      <div className="mt-5 flex items-start justify-between gap-6">
+      <div className="mt-5 flex shrink-0 items-start justify-between gap-6">
         <p className="max-w-md text-lg text-muted-foreground">{project.summary}</p>
         <span className="inline-flex shrink-0 items-center gap-2 text-sm text-lime">
           Open

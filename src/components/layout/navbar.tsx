@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ease } from "@/lib/motion";
-import { cn, featuredProjects, site } from "@/lib";
+import { cn, fillsFrame, navProjects, site } from "@/lib";
 import ProjectMedia from "@/components/work/project-media";
 
 const Navbar = () => {
@@ -46,18 +46,21 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const currentNav = navProjects[preview] ?? navProjects[0];
+
   const active = (href: string) =>
     href === "/work" ? pathname.startsWith("/work") : pathname === href;
 
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50">
+        <div className="width-layout">
         <div
           data-filled={scrolled || open || workOpen ? "true" : "false"}
           className={cn(
-            "width-layout flex h-16 items-center justify-between gap-4 border transition-all duration-300 md:h-[4.25rem]",
+            "flex h-16 items-center justify-between gap-4 border transition-all duration-300 md:h-[4.25rem]",
             scrolled || open || workOpen
-              ? "mt-3 rounded-full border-white/10 bg-background shadow-[0_18px_50px_rgba(0,0,0,0.55)]"
+              ? "mt-3 rounded-full border-white/10 bg-background px-4 shadow-[0_18px_50px_rgba(0,0,0,0.55)] sm:px-6"
               : "border-transparent bg-transparent",
           )}
         >
@@ -113,25 +116,33 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={reduce ? undefined : { opacity: 0, y: 6 }}
                         transition={{ duration: 0.28, ease }}
-                        className="absolute top-full left-1/2 z-50 w-[640px] -translate-x-1/2 pt-5"
+                        className="absolute top-full left-1/2 z-50 w-[min(44rem,calc(100vw-2.5rem))] -translate-x-1/2 pt-5"
                       >
-                        <div className="panel grid grid-cols-[1.1fr_0.9fr] gap-3 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-                          <Link href={`/work/${featuredProjects[preview].slug}`} className="overflow-hidden rounded-2xl">
+                        <div className="panel grid grid-cols-[1.15fr_0.85fr] items-stretch gap-3 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+                          <Link
+                            href={`/work/${currentNav.slug}`}
+                            className="relative min-h-[16rem] overflow-hidden rounded-2xl"
+                          >
                             <ProjectMedia
-                              cover={featuredProjects[preview].cover}
-                              title={featuredProjects[preview].title}
-                              className="aspect-[16/10] rounded-2xl border-0"
+                              cover={currentNav.cover}
+                              title={currentNav.title}
+                              className="absolute inset-0 h-full w-full !aspect-auto rounded-2xl border-0"
+                              imageClassName={
+                                fillsFrame(currentNav.slug)
+                                  ? "!object-cover object-center"
+                                  : "object-contain object-center"
+                              }
                             />
                           </Link>
-                          <ul className="flex flex-col justify-center">
-                            {featuredProjects.map((project, index) => (
+                          <ul className="flex flex-col justify-center py-1">
+                            {navProjects.map((project, index) => (
                               <li key={project.slug}>
                                 <Link
                                   href={`/work/${project.slug}`}
                                   onMouseEnter={() => setPreview(index)}
                                   onFocus={() => setPreview(index)}
                                   className={cn(
-                                    "block rounded-xl px-3 py-2 text-sm transition-colors",
+                                    "block rounded-xl px-3 py-1.5 text-sm transition-colors",
                                     index === preview ? "bg-white/5 text-lime" : "text-foreground/75 hover:text-foreground",
                                   )}
                                 >
@@ -188,6 +199,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+        </div>
       </header>
 
       <AnimatePresence>
@@ -217,13 +229,20 @@ const Navbar = () => {
             </ul>
             <div className="space-y-5">
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {featuredProjects.map((project) => (
+                {navProjects.map((project) => (
                   <Link
                     key={project.slug}
                     href={`/work/${project.slug}`}
                     className="w-28 shrink-0 overflow-hidden rounded-2xl"
                   >
-                    <ProjectMedia cover={project.cover} title={project.title} className="aspect-[4/3] border-0" />
+                    <ProjectMedia
+                      cover={project.cover}
+                      title={project.title}
+                      className="aspect-[4/3] border-0"
+                      imageClassName={
+                        fillsFrame(project.slug) ? "!object-cover object-center" : "object-contain object-center"
+                      }
+                    />
                   </Link>
                 ))}
               </div>

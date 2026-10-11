@@ -10,7 +10,7 @@ import ContactBanner from "@/components/shared/contact-banner";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Product design and frontend work by Courage Livingstone, from Tobams and freelance frontend to Hertechtrail, Tricode, ConnectTech, Synergy Book Club, and TechAscend.",
+    "Product design and frontend work by Courage Livingstone, from Tobams, freelance frontend, and RLkids to Hertechtrail, Tricode, ConnectTech, Synergy Book Club, and TechAscend.",
 };
 
 export default function ExperiencePage() {

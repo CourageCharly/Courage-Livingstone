@@ -59,14 +59,14 @@ export default function ExperiencePage() {
             <p className="kicker text-lime">Training</p>
             <h2 className="display mt-4 text-4xl sm:text-5xl">Frontend, practiced.</h2>
           </Rise>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 grid items-stretch gap-4 md:grid-cols-2">
             {training.map((item) => (
-              <Rise key={item.org}>
-                <article className="panel h-full p-6 sm:p-8">
+              <Rise key={item.org} className="h-full">
+                <article className="panel flex h-full min-h-[14.5rem] flex-col p-6 sm:p-8">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
                   <h3 className="mt-4 text-2xl tracking-[-0.04em]">{item.title}</h3>
-                  <p className="mt-1 text-muted-foreground">{item.org}</p>
-                  <p className="mt-4 text-muted-foreground">{item.body}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.org}</p>
+                  <p className="mt-4 text-sm text-muted-foreground">{item.body}</p>
                 </article>
               </Rise>
             ))}
@@ -78,11 +78,13 @@ export default function ExperiencePage() {
         <PageWrapper className="grid gap-12 lg:grid-cols-2">
           <Rise>
             <p className="kicker text-lime">Education</p>
-            <ul className="mt-8 space-y-4">
+            <ul className="mt-8 grid auto-rows-fr gap-4">
               {education.map((item) => (
-                <li key={item.title} className="panel p-6">
-                  <p className="text-lg tracking-[-0.03em]">{item.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.org}</p>
+                <li key={item.title} className="panel flex h-full min-h-[9.5rem] flex-col justify-between p-6 sm:p-8">
+                  <div>
+                    <p className="text-lg tracking-[-0.03em]">{item.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.org}</p>
+                  </div>
                   <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase">{item.dates}</p>
                 </li>
               ))}

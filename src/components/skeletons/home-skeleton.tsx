@@ -4,9 +4,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 const HomeSkeleton = () => {
   return (
     <div>
-      <section className="relative overflow-hidden px-5 pt-20 pb-8 md:pt-24">
+      <section className="relative overflow-hidden px-5 pt-20 pb-16 md:pt-24 md:pb-24">
         <div className="relative mx-auto flex max-w-4xl flex-col items-center">
-          <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/2 h-[min(92vw,34rem)] w-[min(92vw,34rem)] -translate-x-1/2 -translate-y-[46%] rounded-full border border-white/10" />
+          <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/2 h-[min(96vw,38rem)] w-[min(96vw,38rem)] -translate-x-1/2 -translate-y-[46%] rounded-full border border-white/10" />
           <Skeleton className="h-3 w-56" />
           <Skeleton className="mt-4 h-14 w-[min(92vw,36rem)]" />
           <Skeleton className="mt-2 h-14 w-[min(70vw,24rem)]" />

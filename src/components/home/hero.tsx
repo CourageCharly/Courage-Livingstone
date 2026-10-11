@@ -105,7 +105,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-x-clip px-5 pt-20 pb-8 md:pt-24 md:pb-12">
+    <section className="relative overflow-x-clip px-5 pt-20 pb-16 md:pt-24 md:pb-24">
       <div className="hero-wash hero-wash-a" />
       <div className="hero-wash hero-wash-b" />
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 opacity-40" />
@@ -115,7 +115,7 @@ const Hero = () => {
         <div
           aria-hidden
           data-hero-circle
-          className="pointer-events-none absolute top-1/2 left-1/2 h-[min(88vw,32rem)] w-[min(88vw,32rem)] -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none absolute top-1/2 left-1/2 h-[min(96vw,38rem)] w-[min(96vw,38rem)] -translate-x-1/2 -translate-y-1/2"
         >
           <div className="absolute inset-0 rounded-full border border-white/15" />
           <div className="orbit absolute inset-[7%] rounded-full border border-dashed border-lime/45">

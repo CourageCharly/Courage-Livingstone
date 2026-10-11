@@ -53,7 +53,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="lg:col-span-8">
                     <h2 className="text-2xl tracking-[-0.04em] sm:text-3xl">{item.title}</h2>
-                    <p className="mt-3 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+                    <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{item.body}</p>
                     <p className="mt-6 text-sm text-foreground/80">
                       <span className="kicker mr-3 text-lime">Seen in</span>
                       {where[index]}

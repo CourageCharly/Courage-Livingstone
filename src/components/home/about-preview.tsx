@@ -22,7 +22,7 @@ const AboutPreview = () => {
           <Rise>
             <ul className="grid gap-3 pt-2 sm:grid-cols-2">
               {about.marks.map((mark) => (
-                <li key={mark} className="panel px-4 py-4 text-sm text-foreground">
+                <li key={mark} className="panel px-4 py-4 text-lg text-foreground">
                   {mark}
                 </li>
               ))}

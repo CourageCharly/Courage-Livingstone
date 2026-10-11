@@ -139,11 +139,11 @@ export const education = [
 ] as const;
 
 export const certifications = [
-  "Hertechtrail Academy — Frontend development, 2025",
-  "Agility Africa — Frontend development, 2025",
-  "Hertechtrail Academy — UI/UX design, 2023",
-  "Women Techstar — Product design, 2023",
-  "Udemy — Web and mobile design, 2023",
+  { title: "Frontend development", org: "Hertechtrail Academy", dates: "2025" },
+  { title: "Frontend development", org: "Agility Africa", dates: "2025" },
+  { title: "UI/UX design", org: "Hertechtrail Academy", dates: "2023" },
+  { title: "Product design", org: "Women Techstar", dates: "2023" },
+  { title: "Web and mobile design", org: "Udemy", dates: "2023" },
 ] as const;
 
 export const skills = [

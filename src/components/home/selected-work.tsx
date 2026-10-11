@@ -39,7 +39,7 @@ const SelectedWork = () => {
               />
               <div className="p-6">
                 <h3 className="text-3xl">{project.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{project.summary}</p>
+                <p className="mt-2 text-lg text-muted-foreground">{project.summary}</p>
               </div>
             </Link>
           ))}
@@ -76,6 +76,7 @@ const SelectedWork = () => {
               <div className="p-5">
                 <p className="kicker text-lime">{item.label}</p>
                 <h3 className="mt-2 text-2xl">{item.title}</h3>
+                <p className="mt-2 text-lg text-muted-foreground">{item.summary}</p>
               </div>
             </Link>
           ))}
@@ -132,10 +133,10 @@ const SelectedWork = () => {
             </Link>
           </div>
 
-          <div className="flex items-end justify-between gap-6 lg:col-span-12">
+          <div className="flex items-start justify-between gap-6 lg:col-span-7 lg:col-start-6">
             <div>
               <p className="kicker text-lime">{project.label}</p>
-              <p className="mt-2 max-w-md text-sm text-muted-foreground">{project.summary}</p>
+              <p className="mt-2 max-w-md text-lg text-muted-foreground">{project.summary}</p>
             </div>
             <Link href={`/work/${project.slug}`} className="shrink-0 text-sm text-lime">
               Open case study →

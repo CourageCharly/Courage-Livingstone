@@ -41,11 +41,11 @@ const ExperienceStrip = () => {
                 className="relative grid gap-2 py-6 pl-10 md:grid-cols-12 md:items-baseline"
               >
                 <span className="absolute top-8 left-0 h-3.5 w-3.5 rounded-full border border-lime/70 bg-background shadow-[0_0_12px_rgba(198,241,53,0.45)]" />
-                <p className="font-mono text-[11px] tracking-[0.14em] text-foreground/50 md:col-span-3">
+                <p className="font-mono text-[11px] tracking-[0.14em] text-lime uppercase md:col-span-3">
                   {item.dates}
                 </p>
                 <h3 className="text-2xl tracking-[-0.04em] md:col-span-5">{item.title}</h3>
-                <p className="text-muted-foreground md:col-span-4">
+                <p className="text-lg text-muted-foreground md:col-span-4">
                   {item.org}
                   <span className="text-foreground/40"> · {item.place}</span>
                 </p>

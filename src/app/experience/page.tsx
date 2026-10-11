@@ -36,12 +36,12 @@ export default function ExperiencePage() {
               <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
                 <div className="sm:col-span-4">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
+                  <p className="mt-1 text-lg text-muted-foreground">{item.place}</p>
                 </div>
                 <div className="min-w-0 sm:col-span-8">
                   <h2 className="text-2xl tracking-[-0.04em]">{item.title}</h2>
-                  <p className="mt-0.5 text-sm text-lime">{item.org}</p>
-                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+                  <p className="mt-0.5 text-lg text-muted-foreground">{item.org}</p>
+                  <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{item.body}</p>
                 </div>
               </article>
             </Rise>
@@ -61,8 +61,8 @@ export default function ExperiencePage() {
                 <article className="panel flex h-full min-h-[14.5rem] flex-col p-6 sm:p-8">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
                   <h3 className="mt-4 text-2xl tracking-[-0.04em]">{item.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.org}</p>
-                  <p className="mt-4 text-sm text-muted-foreground">{item.body}</p>
+                  <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
+                  <p className="mt-4 text-lg text-muted-foreground">{item.body}</p>
                 </article>
               </Rise>
             ))}
@@ -79,19 +79,23 @@ export default function ExperiencePage() {
                 <li key={item.title} className="panel flex h-full min-h-[9.5rem] flex-col justify-between p-6 sm:p-8">
                   <div>
                     <p className="text-lg tracking-[-0.03em]">{item.title}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{item.org}</p>
+                    <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
                   </div>
-                  <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase">{item.dates}</p>
+                  <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
                 </li>
               ))}
             </ul>
           </Rise>
           <Rise>
             <p className="kicker text-lime">Certificates</p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 space-y-4">
               {certifications.map((item) => (
-                <li key={item} className="border-t border-white/10 pt-3 text-sm">
-                  {item}
+                <li key={`${item.org}-${item.title}-${item.dates}`} className="panel flex flex-col gap-1 p-5 sm:flex-row sm:items-baseline sm:justify-between">
+                  <span>
+                    <span className="block text-lg tracking-[-0.03em]">{item.title}</span>
+                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                  </span>
+                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</span>
                 </li>
               ))}
             </ul>

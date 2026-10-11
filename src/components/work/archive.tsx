@@ -78,7 +78,7 @@ const Archive = () => {
                 <div className="overflow-hidden rounded-[22px]">
                   <ProjectMedia cover={project.cover} title={project.title} className="rounded-[22px]" />
                 </div>
-                <p className="mt-4 text-sm text-muted-foreground">{project.summary}</p>
+                <p className="mt-4 text-lg text-muted-foreground">{project.summary}</p>
               </div>
             </li>
           );
@@ -107,7 +107,7 @@ const Archive = () => {
                   <div className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-6">
-                  <p className="max-w-md text-muted-foreground">{current.summary}</p>
+                  <p className="max-w-md text-lg text-muted-foreground">{current.summary}</p>
                   <span className="inline-flex shrink-0 items-center gap-2 text-sm text-lime">
                     Open
                     <Arrow />

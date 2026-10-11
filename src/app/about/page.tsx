@@ -66,7 +66,7 @@ export default function AboutPage() {
             ))}
           </div>
           <Rise className="mt-8">
-            <p className="max-w-2xl text-muted-foreground">
+            <p className="max-w-2xl text-lg text-muted-foreground">
               The coaching is at Hertechtrail, a women-in-tech academy. I teach UI/UX fundamentals, design thinking, and how a mockup becomes an interface that can ship.
             </p>
           </Rise>
@@ -96,8 +96,8 @@ export default function AboutPage() {
                       {item.title}
                       <span className="text-muted-foreground"> · {item.org}</span>
                     </h3>
-                    <p className="mt-0.5 text-sm text-muted-foreground">{item.place}</p>
-                    <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+                    <p className="mt-0.5 text-lg text-muted-foreground">{item.place}</p>
+                    <p className="mt-2 max-w-2xl text-lg text-muted-foreground">{item.body}</p>
                   </div>
                 </article>
               </Rise>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                     <p className={`kicker ${tone?.tone ?? "text-lime"}`}>{group.group}</p>
                     <ul className="mt-6 space-y-3">
                       {group.items.map((item) => (
-                        <li key={item} className="border-t border-white/10 pt-3 text-sm">
+                        <li key={item} className="border-t border-white/10 pt-3 text-lg">
                           {item}
                         </li>
                       ))}
@@ -135,34 +135,45 @@ export default function AboutPage() {
       </section>
 
       <section className="border-t border-white/10 py-20 md:py-28">
-        <PageWrapper className="grid gap-12 lg:grid-cols-12">
-          <Rise className="lg:col-span-5">
+        <PageWrapper>
+          <Rise>
             <p className="kicker text-lime">Study</p>
-            <h2 className="display mt-4 text-4xl sm:text-5xl">Education and certificates.</h2>
+            <h2 className="display mt-4 text-4xl sm:text-5xl">Education.</h2>
           </Rise>
-          <div className="space-y-8 lg:col-span-7">
-            <Rise>
-              <ul className="space-y-4">
-                {education.map((item) => (
-                  <li key={item.title} className="panel flex flex-col gap-1 p-6 sm:flex-row sm:items-baseline sm:justify-between">
-                    <span>
-                      <span className="block">{item.title}</span>
-                      <span className="text-sm text-muted-foreground">{item.org}</span>
-                    </span>
-                    <span className="font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase">{item.dates}</span>
-                  </li>
-                ))}
-              </ul>
-            </Rise>
-            <Rise>
-              <ul className="space-y-3">
-                {certifications.map((item) => (
-                  <li key={item} className="border-t border-white/10 pt-3 text-sm text-muted-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Rise>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {education.map((item) => (
+              <Rise key={item.title} className="h-full">
+                <article className="panel flex h-full flex-col justify-between p-6 sm:p-8">
+                  <div>
+                    <p className="text-2xl tracking-[-0.04em]">{item.title}</p>
+                    <p className="mt-2 text-lg text-muted-foreground">{item.org}</p>
+                  </div>
+                  <p className="mt-6 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
+                </article>
+              </Rise>
+            ))}
+          </div>
+        </PageWrapper>
+      </section>
+
+      <section className="border-t border-white/10 py-20 md:py-28">
+        <PageWrapper>
+          <Rise>
+            <p className="kicker text-lime">Proof</p>
+            <h2 className="display mt-4 text-4xl sm:text-5xl">Certificates.</h2>
+          </Rise>
+          <div className="mt-12 space-y-4">
+            {certifications.map((item) => (
+              <Rise key={`${item.org}-${item.title}-${item.dates}`}>
+                <article className="panel flex flex-col gap-1 p-6 sm:flex-row sm:items-baseline sm:justify-between sm:p-8">
+                  <span>
+                    <span className="block text-2xl tracking-[-0.04em]">{item.title}</span>
+                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
+                  </span>
+                  <span className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:mt-0">{item.dates}</span>
+                </article>
+              </Rise>
+            ))}
           </div>
         </PageWrapper>
       </section>
@@ -178,7 +189,7 @@ export default function AboutPage() {
               <Rise key={note.title} delay={index * 0.06} className="h-full min-w-0">
                 <article className="panel flex h-full flex-col p-6 sm:p-8">
                   <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
-                  <p className="mt-3 text-muted-foreground">{note.body}</p>
+                  <p className="mt-3 text-lg text-muted-foreground">{note.body}</p>
                   <div className="mt-6 flex flex-wrap gap-4">
                     {note.links.map((link) => (
                       <a

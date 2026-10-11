@@ -30,7 +30,7 @@ const ServicesGrid = () => {
                     <span className="font-mono text-[11px] tracking-[0.16em] text-foreground/40">{item.index}</span>
                   </div>
                   <h3 className="mt-5 text-2xl tracking-[-0.04em]">{item.title}</h3>
-                  <p className="mt-2 max-w-md text-sm text-muted-foreground">{item.body}</p>
+                  <p className="mt-2 max-w-md text-lg text-muted-foreground">{item.body}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm text-lime">
                     Explore
                     <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

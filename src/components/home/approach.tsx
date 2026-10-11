@@ -29,7 +29,7 @@ const ServicesGrid = () => {
                     </span>
                     <span className="font-mono text-[11px] tracking-[0.16em] text-foreground/40">{item.index}</span>
                   </div>
-                  <h3 className="mt-8 text-2xl font-medium tracking-[-0.04em]">{item.title}</h3>
+                  <h3 className="mt-8 text-2xl tracking-[-0.04em]">{item.title}</h3>
                   <p className="mt-3 max-w-md flex-1 text-sm text-muted-foreground">{item.body}</p>
                   <span className="mt-8 inline-flex items-center gap-2 text-sm text-lime">
                     Explore

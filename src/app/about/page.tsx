@@ -7,7 +7,6 @@ import TechMarks from "@/components/layout/tech-marks";
 import ContactBanner from "@/components/shared/contact-banner";
 import Portrait from "@/components/about/portrait";
 import Rise from "@/components/motion/rise";
-import CardStack from "@/components/shared/card-stack";
 import MaskLines from "@/components/shared/mask-lines";
 
 export const metadata: Metadata = {
@@ -74,7 +73,7 @@ export default function AboutPage() {
         </PageWrapper>
       </section>
 
-      <section className="relative border-t border-white/10 py-20 md:py-28">
+      <section className="relative overflow-hidden border-t border-white/10 py-20 md:py-28">
         <PageWrapper className="relative">
           <Rise className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -85,26 +84,25 @@ export default function AboutPage() {
               Full experience →
             </Link>
           </Rise>
-          <CardStack className="mt-12">
-            {experience.map((item) => (
-              <article
-                key={`${item.org}-${item.dates}`}
-                className="panel grid gap-2 px-5 py-4 shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:grid-cols-12 sm:px-6 sm:py-5"
-              >
-                <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:col-span-3">
-                  {item.dates}
-                </p>
-                <div className="min-w-0 sm:col-span-9">
-                  <h3 className="text-lg tracking-[-0.03em]">
-                    {item.title}
-                    <span className="text-sm text-muted-foreground"> · {item.org}</span>
-                  </h3>
-                  <p className="mt-0.5 text-sm text-muted-foreground">{item.place}</p>
-                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
-                </div>
-              </article>
+          <div className="mt-12 grid gap-3">
+            {experience.map((item, index) => (
+              <Rise key={`${item.org}-${item.dates}`} delay={index * 0.04}>
+                <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
+                  <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:col-span-3">
+                    {item.dates}
+                  </p>
+                  <div className="min-w-0 sm:col-span-9">
+                    <h3 className="text-lg tracking-[-0.03em] sm:text-xl">
+                      {item.title}
+                      <span className="text-sm text-muted-foreground"> · {item.org}</span>
+                    </h3>
+                    <p className="mt-0.5 text-sm text-muted-foreground">{item.place}</p>
+                    <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
+                  </div>
+                </article>
+              </Rise>
             ))}
-          </CardStack>
+          </div>
         </PageWrapper>
       </section>
 
@@ -175,30 +173,29 @@ export default function AboutPage() {
             <p className="kicker text-lime">Also</p>
             <h2 className="display mt-4 text-4xl sm:text-6xl">In public.</h2>
           </Rise>
-          <CardStack className="mt-12">
-            {notes.map((note) => (
-              <article
-                key={note.title}
-                className="panel p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:p-8"
-              >
-                <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{note.body}</p>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  {note.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm text-lime"
-                    >
-                      {link.label} →
-                    </a>
-                  ))}
-                </div>
-              </article>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {notes.map((note, index) => (
+              <Rise key={note.title} delay={index * 0.06} className="h-full">
+                <article className="panel flex h-full flex-col p-6 sm:p-8">
+                  <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">{note.body}</p>
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    {note.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm text-lime"
+                      >
+                        {link.label} →
+                      </a>
+                    ))}
+                  </div>
+                </article>
+              </Rise>
             ))}
-          </CardStack>
+          </div>
         </PageWrapper>
       </section>
 

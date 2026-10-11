@@ -90,7 +90,7 @@ const SelectedWork = () => {
     >
       <div className="sticky top-[4.5rem] overflow-hidden pt-4" style={{ height: "calc(100svh - 4.5rem)" }}>
         <PageWrapper className="h-full">
-        <div className="grid h-full content-center gap-5 lg:grid-cols-12" onMouseLeave={() => setHovered(null)}>
+        <div className="grid h-full content-center items-stretch gap-5 lg:grid-cols-12" onMouseLeave={() => setHovered(null)}>
           <div className="lg:col-span-5">
             <p className="kicker text-lime">Selected work</p>
             <ul className="mt-5">
@@ -113,27 +113,33 @@ const SelectedWork = () => {
             </ul>
           </div>
 
-          <div className="lg:col-span-7">
-            <Link href={`/work/${project.slug}`} data-cursor="Open" className="panel relative block overflow-hidden">
+          <div className="relative min-h-[16rem] lg:col-span-7">
+            <Link
+              href={`/work/${project.slug}`}
+              data-cursor="Open"
+              className="panel absolute inset-0 overflow-hidden"
+            >
               <TechCorners />
               <ProjectMedia
                 cover={project.cover}
                 title={project.title}
                 priority={active === 0}
-                className="aspect-[16/10] w-full rounded-none border-0"
+                className="!aspect-auto h-full w-full rounded-none border-0"
                 imageClassName="!object-cover object-center"
+                sizes="(min-width: 1024px) 55vw, 100vw"
               />
               <div className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
             </Link>
-            <div className="mt-4 flex items-end justify-between gap-6">
-              <div>
-                <p className="kicker text-lime">{project.label}</p>
-                <p className="mt-2 max-w-md text-sm text-muted-foreground">{project.summary}</p>
-              </div>
-              <Link href={`/work/${project.slug}`} className="shrink-0 text-sm text-lime">
-                Open case study →
-              </Link>
+          </div>
+
+          <div className="flex items-end justify-between gap-6 lg:col-span-12">
+            <div>
+              <p className="kicker text-lime">{project.label}</p>
+              <p className="mt-2 max-w-md text-sm text-muted-foreground">{project.summary}</p>
             </div>
+            <Link href={`/work/${project.slug}`} className="shrink-0 text-sm text-lime">
+              Open case study →
+            </Link>
           </div>
         </div>
         </PageWrapper>

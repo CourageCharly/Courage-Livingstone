@@ -76,11 +76,9 @@ export default function ExperiencePage() {
             <p className="kicker text-lime">Education</p>
             <ul className="mt-8 grid auto-rows-fr gap-4">
               {education.map((item) => (
-                <li key={item.title} className="panel flex h-full min-h-[9.5rem] flex-col justify-between p-6 sm:p-8">
-                  <div>
-                    <p className="text-lg tracking-[-0.03em]">{item.title}</p>
-                    <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
-                  </div>
+                <li key={item.title} className="panel p-4 sm:p-5">
+                  <p className="text-lg tracking-[-0.03em]">{item.title}</p>
+                  <p className="mt-1 text-lg text-muted-foreground">{item.org}</p>
                   <p className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
                 </li>
               ))}
@@ -90,12 +88,12 @@ export default function ExperiencePage() {
             <p className="kicker text-lime">Certificates</p>
             <ul className="mt-8 space-y-4">
               {certifications.map((item) => (
-                <li key={`${item.org}-${item.title}-${item.dates}`} className="panel flex flex-col gap-1 p-5 sm:flex-row sm:items-baseline sm:justify-between">
+                <li key={`${item.org}-${item.title}-${item.dates}`} className="panel grid gap-4 p-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-16">
                   <span>
                     <span className="block text-lg tracking-[-0.03em]">{item.title}</span>
                     <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
                   </span>
-                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</span>
+                  <span className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:pl-10 sm:text-right">{item.dates}</span>
                 </li>
               ))}
             </ul>

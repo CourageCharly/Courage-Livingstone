@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib";
-import { about, certifications, education, experience, notes, skills } from "@/lib/profile";
+import { about, experience, notes, skills } from "@/lib/profile";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks from "@/components/layout/tech-marks";
 import ContactBanner from "@/components/shared/contact-banner";
 import Portrait from "@/components/about/portrait";
+import Study from "@/components/about/study";
 import Rise from "@/components/motion/rise";
 import MaskLines from "@/components/shared/mask-lines";
 
@@ -134,49 +135,7 @@ export default function AboutPage() {
         </PageWrapper>
       </section>
 
-      <section className="border-t border-white/10 py-20 md:py-28">
-        <PageWrapper>
-          <Rise>
-            <p className="kicker text-lime">Study</p>
-            <h2 className="display mt-4 text-4xl sm:text-5xl">Education.</h2>
-          </Rise>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {education.map((item) => (
-              <Rise key={item.title} className="h-full">
-                <article className="panel flex h-full flex-col justify-between p-6 sm:p-8">
-                  <div>
-                    <p className="text-2xl tracking-[-0.04em]">{item.title}</p>
-                    <p className="mt-2 text-lg text-muted-foreground">{item.org}</p>
-                  </div>
-                  <p className="mt-6 font-mono text-[11px] tracking-[0.16em] text-lime uppercase">{item.dates}</p>
-                </article>
-              </Rise>
-            ))}
-          </div>
-        </PageWrapper>
-      </section>
-
-      <section className="border-t border-white/10 py-20 md:py-28">
-        <PageWrapper>
-          <Rise>
-            <p className="kicker text-lime">Proof</p>
-            <h2 className="display mt-4 text-4xl sm:text-5xl">Certificates.</h2>
-          </Rise>
-          <div className="mt-12 space-y-4">
-            {certifications.map((item) => (
-              <Rise key={`${item.org}-${item.title}-${item.dates}`}>
-                <article className="panel flex flex-col gap-1 p-6 sm:flex-row sm:items-baseline sm:justify-between sm:p-8">
-                  <span>
-                    <span className="block text-2xl tracking-[-0.04em]">{item.title}</span>
-                    <span className="mt-1 block text-lg text-muted-foreground">{item.org}</span>
-                  </span>
-                  <span className="mt-3 font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:mt-0">{item.dates}</span>
-                </article>
-              </Rise>
-            ))}
-          </div>
-        </PageWrapper>
-      </section>
+      <Study />
 
       <section className="border-t border-white/10 py-20 md:py-28">
         <PageWrapper>

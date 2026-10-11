@@ -387,17 +387,17 @@ export const projects: Project[] = [
     slug: "styleloom",
     title: "StyleLoom",
     year: "2026",
-    label: "Ecommerce · Product design",
+    label: "Ecommerce · Product design · Frontend",
     summary:
       "A dark luxury fashion store: new season, a shop grid, and a product page that makes add-to-bag the only decision.",
     cover: "/images/styleloom/live-home.jpg",
     live: "https://style-loom-umber.vercel.app/",
-    tags: ["Ecommerce", "Product design", "Fashion", "Figma"],
+    tags: ["Ecommerce", "Product design", "Frontend", "Fashion", "Figma"],
     design: ["Homepage", "Shop listing", "Product page", "Design system"],
-    development: [],
-    role: "Product Designer",
-    services: ["Product design", "UX/UI", "Design system"],
-    stack: ["Figma"],
+    development: ["React", "Responsive layout"],
+    role: "Product Designer × Frontend Developer",
+    services: ["Product design", "Frontend", "UX/UI", "Design system"],
+    stack: ["Figma", "React"],
     challenge:
       "Fashion ecommerce often shouts. StyleLoom needed a quiet store that still converts: find a piece, choose a size, add it.",
     approach:

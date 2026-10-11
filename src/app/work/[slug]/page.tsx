@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getOtherProjects, getProject, projects, site } from "@/lib";
+import { fillsFrame, getOtherProjects, getProject, projects, site } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks, { TechCorners } from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
@@ -39,8 +39,8 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const others = getOtherProjects(project.slug, 3);
-  const imageFit = ["stanbic", "farm-rush", "uncle-tobi"].includes(project.slug)
-    ? "object-cover object-center"
+  const imageFit = fillsFrame(project.slug)
+    ? "!object-cover object-center"
     : "object-contain object-center";
 
   return (

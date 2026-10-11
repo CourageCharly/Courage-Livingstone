@@ -20,7 +20,7 @@ const ServicesGrid = () => {
           </Link>
         </Rise>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {services.filter((item) => item.index !== "05").map((item, index) => {
+          {services.filter((item) => item.index !== "05").slice(0, 2).map((item, index) => {
             const Icon = icons[index] ?? Compass;
             return (
               <Rise key={item.index} delay={index * 0.05} className="h-full">

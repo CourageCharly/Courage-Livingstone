@@ -3,7 +3,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
-import { cn, projects } from "@/lib";
+import { cn, fillsFrame, projects } from "@/lib";
 import { Arrow } from "@/components/shared/text-link";
 import { TechCorners } from "@/components/layout/tech-marks";
 import PageWrapper from "@/components/layout/page-wrapper";
@@ -129,7 +129,7 @@ function ProjectList({
                     title={project.title}
                     className="rounded-[22px]"
                     imageClassName={
-                      project.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center"
+                      fillsFrame(project.slug) ? "!object-cover object-center" : "object-contain object-center"
                     }
                   />
                 </div>
@@ -167,7 +167,7 @@ function Preview({
               loading="eager"
               className="rounded-none border-0"
               imageClassName={
-                item.slug === "stanbic" ? "object-cover object-center" : "object-contain object-center"
+                fillsFrame(item.slug) ? "!object-cover object-center" : "object-contain object-center"
               }
             />
           </div>

@@ -51,16 +51,11 @@ const Navbar = () => {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50",
-          (scrolled || open || workOpen) && "px-3 sm:px-4",
-        )}
-      >
+      <header className="fixed inset-x-0 top-0 z-50">
         <div
           data-filled={scrolled || open || workOpen ? "true" : "false"}
           className={cn(
-            "mx-auto flex h-16 w-full max-w-[1320px] items-center justify-between gap-4 border px-4 transition-all duration-300 sm:px-6 md:h-[4.25rem]",
+            "width-layout flex h-16 items-center justify-between gap-4 border transition-all duration-300 md:h-[4.25rem]",
             scrolled || open || workOpen
               ? "mt-3 rounded-full border-white/10 bg-background shadow-[0_18px_50px_rgba(0,0,0,0.55)]"
               : "border-transparent bg-transparent",
@@ -204,7 +199,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.3, ease }}
-            className="fixed inset-0 z-[45] flex h-dvh min-h-dvh w-full flex-col bg-background px-5 pt-[4.75rem] pb-[max(1.25rem,env(safe-area-inset-bottom))]"
+            className="fixed inset-0 z-[45] flex h-dvh min-h-dvh w-full flex-col bg-background px-[5%] pt-[4.75rem] pb-[max(1.25rem,env(safe-area-inset-bottom))] xl:px-[70px]"
           >
             <ul className="flex flex-1 flex-col justify-start gap-0 pt-2">
               {site.nav.map((item, index) => (

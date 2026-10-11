@@ -105,13 +105,14 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-hidden px-5 pt-32 pb-56 md:pt-40 md:pb-72">
+    <section className="relative overflow-hidden pt-32 pb-56 md:pt-40 md:pb-72">
       <div className="hero-wash hero-wash-a" />
       <div className="hero-wash hero-wash-b" />
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 opacity-40" />
       <div aria-hidden className="hero-scan pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-lime/10 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+      <div className="width-layout relative z-10">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
         <div
           aria-hidden
           data-hero-circle
@@ -161,6 +162,7 @@ const Hero = () => {
         <a href="#about" className="scroll-cue relative z-10 mt-8 font-mono text-[10px] tracking-[0.22em] text-foreground/70 uppercase">
           Scroll to explore ↓
         </a>
+      </div>
       </div>
     </section>
   );

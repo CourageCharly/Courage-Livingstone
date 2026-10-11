@@ -15,9 +15,6 @@ const Pipeline = () => {
               to production.
             </h2>
           </Rise>
-          <Rise delay={0.06}>
-            <p className="mt-8 max-w-sm text-lg text-muted-foreground">I don&apos;t stop at the design file.</p>
-          </Rise>
         </div>
         <ol className="lg:col-span-6 lg:col-start-7">
           {pipeline.map((step, index) => (

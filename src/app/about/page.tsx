@@ -84,17 +84,17 @@ export default function AboutPage() {
               Full experience →
             </Link>
           </Rise>
-          <div className="mt-12 grid gap-3">
+          <div className="mt-12 grid gap-4">
             {experience.map((item, index) => (
-              <Rise key={`${item.org}-${item.dates}`} delay={index * 0.04}>
+              <Rise key={`${item.org}-${item.dates}`} delay={index * 0.05}>
                 <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
                   <p className="font-mono text-[11px] tracking-[0.16em] text-lime uppercase sm:col-span-3">
                     {item.dates}
                   </p>
                   <div className="min-w-0 sm:col-span-9">
-                    <h3 className="text-lg tracking-[-0.03em] sm:text-xl">
+                    <h3 className="text-lg tracking-[-0.03em]">
                       {item.title}
-                      <span className="text-sm text-muted-foreground"> · {item.org}</span>
+                      <span className="text-muted-foreground"> · {item.org}</span>
                     </h3>
                     <p className="mt-0.5 text-sm text-muted-foreground">{item.place}</p>
                     <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
@@ -142,9 +142,9 @@ export default function AboutPage() {
           </Rise>
           <div className="space-y-8 lg:col-span-7">
             <Rise>
-              <ul className="grid auto-rows-fr gap-4">
+              <ul className="space-y-4">
                 {education.map((item) => (
-                  <li key={item.title} className="panel flex h-full min-h-[7.5rem] flex-col justify-between gap-1 p-6 sm:flex-row sm:items-baseline sm:p-8">
+                  <li key={item.title} className="panel flex flex-col gap-1 p-6 sm:flex-row sm:items-baseline sm:justify-between">
                     <span>
                       <span className="block">{item.title}</span>
                       <span className="text-sm text-muted-foreground">{item.org}</span>
@@ -173,12 +173,12 @@ export default function AboutPage() {
             <p className="kicker text-lime">Also</p>
             <h2 className="display mt-4 text-4xl sm:text-6xl">In public.</h2>
           </Rise>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid grid-cols-2 gap-4">
             {notes.map((note, index) => (
-              <Rise key={note.title} delay={index * 0.06} className="h-full">
+              <Rise key={note.title} delay={index * 0.06} className="h-full min-w-0">
                 <article className="panel flex h-full flex-col p-6 sm:p-8">
                   <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{note.body}</p>
+                  <p className="mt-3 text-muted-foreground">{note.body}</p>
                   <div className="mt-6 flex flex-wrap gap-4">
                     {note.links.map((link) => (
                       <a

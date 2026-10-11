@@ -39,7 +39,7 @@ export default function ExperiencePage() {
                   <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
                 </div>
                 <div className="min-w-0 sm:col-span-8">
-                  <h2 className="text-lg tracking-[-0.03em] sm:text-xl">{item.title}</h2>
+                  <h2 className="text-2xl tracking-[-0.04em]">{item.title}</h2>
                   <p className="mt-0.5 text-sm text-lime">{item.org}</p>
                   <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{item.body}</p>
                 </div>

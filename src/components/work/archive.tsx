@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
 import { cn, projects } from "@/lib";
@@ -14,6 +14,12 @@ const Archive = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   const [hovered, setHovered] = useState<number | null>(null);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add("hide-scrollbar");
+    return () => root.classList.remove("hide-scrollbar");
+  }, []);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -31,7 +37,7 @@ const Archive = () => {
 
   if (reduce) {
     return (
-      <PageWrapper>
+      <PageWrapper className="pb-20 md:pb-28">
         <div className="lg:grid lg:grid-cols-12 lg:items-stretch lg:gap-10" onMouseLeave={() => setHovered(null)}>
           <div className="lg:col-span-5">
             <ProjectList active={shown} onHover={setHovered} mobileImages />
@@ -45,7 +51,7 @@ const Archive = () => {
   }
 
   return (
-    <div>
+    <div className="pb-20 md:pb-28">
       <section className="lg:hidden">
         <PageWrapper>
           <ProjectList active={shown} onHover={setHovered} mobileImages />
@@ -56,13 +62,13 @@ const Archive = () => {
         className="relative hidden lg:block"
         style={{ height: `${(projects.length + 0.5) * 78}vh` }}
       >
-        <div className="sticky top-[4.5rem] overflow-hidden pt-4" style={{ height: "calc(100svh - 4.5rem)" }}>
+        <div className="sticky top-[4.5rem] overflow-hidden pt-4 pb-16" style={{ height: "calc(100svh - 4.5rem)" }}>
           <PageWrapper className="h-full">
             <div
               className="grid h-full content-start items-stretch gap-10 pt-6 lg:grid-cols-12 lg:content-center lg:pt-0"
               onMouseLeave={() => setHovered(null)}
             >
-              <div className="flex h-full min-h-0 flex-col justify-center overflow-y-auto lg:col-span-5">
+              <div className="flex h-full min-h-0 flex-col justify-center overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:col-span-5">
                 <ProjectList active={shown} onHover={setHovered} />
               </div>
               <div className="relative hidden min-h-[16rem] lg:col-span-7 lg:block">
@@ -86,11 +92,11 @@ function ProjectList({
   mobileImages?: boolean;
 }) {
   return (
-    <ul>
+    <ul className="pb-2">
       {projects.map((project, index) => {
         const selected = index === active;
         return (
-          <li key={project.slug} className="border-b border-border">
+          <li key={project.slug} className="border-b border-border last:border-b-0">
             <Link
               href={`/work/${project.slug}`}
               data-cursor="Open"

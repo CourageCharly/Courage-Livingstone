@@ -101,6 +101,17 @@
     letter-spacing: -0.011em;
   }
 
+  html.hide-scrollbar,
+  html.hide-scrollbar body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html.hide-scrollbar::-webkit-scrollbar,
+  html.hide-scrollbar body::-webkit-scrollbar {
+    display: none;
+  }
+
   body::before {
     content: "";
     pointer-events: none;

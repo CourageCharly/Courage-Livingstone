@@ -463,6 +463,8 @@ export const projects: Project[] = [
   },
 ];
 
+projects.sort((a, b) => Number(b.year) - Number(a.year));
+
 export const getProject = (slug: string) => projects.find((project) => project.slug === slug);
 
 export const getNextProject = (slug: string) => {

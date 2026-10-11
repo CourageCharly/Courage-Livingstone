@@ -58,11 +58,12 @@ const TextLink = ({ href, children, className, direction = "forward", cursor }: 
   );
   const inner = (
     <>
+      {direction === "back" ? <Arrow direction="back" /> : null}
       <span className="relative">
         {children}
         <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100 group-focus-visible:scale-x-100" />
       </span>
-      <Arrow direction={direction} />
+      {direction === "back" ? null : <Arrow direction={direction} />}
     </>
   );
 

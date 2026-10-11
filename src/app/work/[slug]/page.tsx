@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         <TechMarks />
       <PageWrapper className="relative">
         <TextLink href="/work" direction="back" className="text-sm">
-          Work
+          Back
         </TextLink>
         <p className="kicker mt-10">
           {project.label} — {project.year}
@@ -142,25 +142,45 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
             <p className="kicker">Interface</p>
             <h2 className="mt-4 font-serif text-4xl tracking-[-0.045em]">Key screens</h2>
           </Rise>
-          <div className="mt-12 grid gap-12 md:grid-cols-2">
-            {project.screens.map((screen, index) => (
-              <Rise key={screen.label} className={index === 0 ? "md:col-span-2" : undefined}>
+          <div className="mt-12 space-y-6">
+            {project.screens[0] ? (
+              <Rise>
                 <figure>
                   <div className="overflow-hidden rounded-[22px] border border-border">
                     <ProjectMedia
-                      cover={screen.cover}
+                      cover={project.screens[0].cover}
                       title={project.title}
-                      alt={`${project.title} — ${screen.label}`}
-                      className={index === 0 ? "aspect-[16/9]" : "aspect-[16/10]"}
+                      alt={`${project.title} — ${project.screens[0].label}`}
+                      className="aspect-[16/9]"
                     />
                   </div>
                   <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                    <p className="kicker text-foreground/80">{screen.label}</p>
-                    <p className="max-w-md text-sm text-muted-foreground sm:text-right">{screen.caption}</p>
+                    <p className="kicker text-foreground/80">{project.screens[0].label}</p>
+                    <p className="max-w-md text-sm text-muted-foreground sm:text-right">{project.screens[0].caption}</p>
                   </figcaption>
                 </figure>
               </Rise>
-            ))}
+            ) : null}
+            <div className="grid gap-6 sm:grid-cols-2">
+              {project.screens.slice(1).map((screen) => (
+                <Rise key={screen.label}>
+                  <figure>
+                    <div className="overflow-hidden rounded-[22px] border border-border">
+                      <ProjectMedia
+                        cover={screen.cover}
+                        title={project.title}
+                        alt={`${project.title} — ${screen.label}`}
+                        className="aspect-[16/10]"
+                      />
+                    </div>
+                    <figcaption className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                      <p className="kicker text-foreground/80">{screen.label}</p>
+                      <p className="max-w-md text-sm text-muted-foreground sm:text-right">{screen.caption}</p>
+                    </figcaption>
+                  </figure>
+                </Rise>
+              ))}
+            </div>
           </div>
           {project.system ? (
             <Rise className="mt-16">
@@ -203,24 +223,30 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       </section>
 
       <section className="border-t border-border" data-other-projects>
-        <PageWrapper className="py-10 md:py-14">
+        <PageWrapper className="py-16 md:py-24">
           <p className="kicker text-lime">Other projects</p>
           <h2 className="display mt-3 text-2xl sm:text-3xl">Three more from the archive.</h2>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {others.map((item) => (
               <Link
                 key={item.slug}
                 href={`/work/${item.slug}`}
                 data-cursor="Open"
-                className="panel group relative overflow-hidden outline-none transition-colors hover:border-lime/40"
+                className="panel group relative flex w-full flex-col overflow-hidden outline-none transition-colors hover:border-lime/40"
               >
                 <TechCorners />
-                <ProjectMedia cover={item.cover} title={item.title} className="aspect-[16/9] h-32 rounded-none border-0 sm:h-36" />
-                <div className="p-4">
+                <ProjectMedia
+                  cover={item.cover}
+                  title={item.title}
+                  className="w-full rounded-none border-0"
+                  imageClassName="object-cover object-center"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div className="p-5">
                   <p className="kicker text-lime">
                     {item.label} — {item.year}
                   </p>
-                  <p className="mt-2 flex items-end justify-between gap-3 text-lg tracking-[-0.04em]">
+                  <p className="mt-3 flex items-end justify-between gap-3 text-2xl tracking-[-0.04em]">
                     {item.title}
                     <Arrow />
                   </p>
@@ -228,7 +254,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               </Link>
             ))}
           </div>
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-10 text-sm text-muted-foreground">
             A project with {site.name}?{" "}
             <Link href="/contact" className="text-foreground underline underline-offset-4">
               Start here

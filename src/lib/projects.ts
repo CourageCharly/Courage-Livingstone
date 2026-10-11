@@ -80,6 +80,16 @@ export const projects: Project[] = [
         label: "Plans",
         caption: "Subscriptions use the same type, field, and action as the rest of the product.",
       },
+      {
+        cover: "/images/streamvibe/movies.png",
+        label: "Catalog",
+        caption: "Movies stay a catalog of their own, on the same field.",
+      },
+      {
+        cover: "/images/streamvibe/browse-web.png",
+        label: "Browse",
+        caption: "Browse keeps discovery on the same field as home.",
+      },
     ],
     system: {
       typeface: "Manrope",
@@ -137,6 +147,26 @@ export const projects: Project[] = [
         cover: "/images/tobams/live-jobs.jpg",
         label: "Jobs",
         caption: "Open roles, including product design, on the same site.",
+      },
+      {
+        cover: "/images/tobams/live-products.jpg",
+        label: "Products",
+        caption: "AI-driven assessment and the product range on the live site.",
+      },
+      {
+        cover: "/images/tobams/live-consult.jpg",
+        label: "Consultation",
+        caption: "Book a consultation — the live contact path.",
+      },
+      {
+        cover: "/images/tobams/live-pricing.jpg",
+        label: "Pricing",
+        caption: "Plans on tobamsgroup.com.",
+      },
+      {
+        cover: "/images/tobams/live-projects.jpg",
+        label: "Projects",
+        caption: "Project highlights from the live company site.",
       },
     ],
     system: {
@@ -201,6 +231,11 @@ export const projects: Project[] = [
         label: "Reward system",
         caption: "The Exyra Rewards System — Orbit, Aether, Nexus, and the rest.",
       },
+      {
+        cover: "/images/exyra/live-agents.jpg",
+        label: "Agents",
+        caption: "Explore Agents on the live platform.",
+      },
     ],
     system: {
       typeface: "Inter",
@@ -258,6 +293,16 @@ export const projects: Project[] = [
         label: "Launch",
         caption: "The same interface, held in the Fraktia Core launch frame from X.",
       },
+      {
+        cover: "/images/fraktia/beta.jpg",
+        label: "Beta",
+        caption: "Fraktia Core live on beta testing, with the builder on screen.",
+      },
+      {
+        cover: "/images/fraktia/messier.jpg",
+        label: "Partnership",
+        caption: "Fraktia in the wild — the same system, held as a launch frame.",
+      },
     ],
     system: {
       typeface: "Syne",
@@ -301,14 +346,29 @@ export const projects: Project[] = [
     ],
     screens: [
       {
-        cover: "/images/stanbic/hero.png",
+        cover: "/images/stanbic/col-left.png",
         label: "Hero",
         caption: "The first screen states the promise and leaves room to choose a path.",
       },
       {
-        cover: "/images/stanbic/board.png",
+        cover: "/images/stanbic/col-mid.png",
+        label: "Products",
+        caption: "Internet banking, cards, and accounts each get a section.",
+      },
+      {
+        cover: "/images/stanbic/col-right.png",
+        label: "Rates",
+        caption: "Exchange, eNaira, and the close of the homepage.",
+      },
+      {
+        cover: "/images/stanbic/hero.png",
         label: "Homepage",
-        caption: "Offers, accounts, and rates each get a section instead of one crowded fold.",
+        caption: "Hero and products side by side as one banking path.",
+      },
+      {
+        cover: "/images/stanbic/board.png",
+        label: "Full page",
+        caption: "The homepage as one board: hero, products, and rates.",
       },
     ],
     system: {
@@ -367,6 +427,26 @@ export const projects: Project[] = [
         cover: "/images/styleloom/live-product.jpg",
         label: "Product",
         caption: "A single piece, materials, and add to cart.",
+      },
+      {
+        cover: "/images/styleloom/live-cart.jpg",
+        label: "Cart",
+        caption: "The bag on the live StyleLoom store.",
+      },
+      {
+        cover: "/images/styleloom/live-contact.jpg",
+        label: "Contact",
+        caption: "Contact on the live StyleLoom store.",
+      },
+      {
+        cover: "/images/styleloom/live-orders.jpg",
+        label: "Orders",
+        caption: "Track a package and order history on the live store.",
+      },
+      {
+        cover: "/images/styleloom/live-womens.jpg",
+        label: "Womens",
+        caption: "The womens collection on the live StyleLoom store.",
       },
     ],
     system: {

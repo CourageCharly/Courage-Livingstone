@@ -1,0 +1,78 @@
+"use client";
+
+import { useRef, type PointerEvent } from "react";
+import Image from "next/image";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+
+type Props = {
+  priority?: boolean;
+};
+
+const Portrait = ({ priority = false }: Props) => {
+  const frame = useRef<HTMLDivElement>(null);
+  const root = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: root,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [20, -20]);
+
+  const move = (event: PointerEvent<HTMLDivElement>) => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const node = frame.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+    node.style.setProperty("--px", `${((x - 0.5) * 8).toFixed(2)}px`);
+    node.style.setProperty("--py", `${((y - 0.5) * 6).toFixed(2)}px`);
+    node.style.setProperty("--lx", `${(x * 100).toFixed(1)}%`);
+    node.style.setProperty("--ly", `${(y * 100).toFixed(1)}%`);
+  };
+
+  const reset = () => {
+    const node = frame.current;
+    if (!node) return;
+    node.style.setProperty("--px", "0px");
+    node.style.setProperty("--py", "0px");
+    node.style.setProperty("--lx", "50%");
+    node.style.setProperty("--ly", "30%");
+  };
+
+  return (
+    <figure ref={root}>
+      <p className="mb-3 text-right font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
+        Portrait / 001
+      </p>
+      <div
+        ref={frame}
+        onPointerMove={move}
+        onPointerLeave={reset}
+        className="portrait-frame relative aspect-[4/5] overflow-hidden border border-white/15 bg-[#101010]"
+      >
+        <div className="portrait-reveal absolute inset-0">
+          <motion.div style={{ y }} className="absolute inset-[-8%]">
+            <Image
+              src="/images/portrait-2026.jpg"
+              alt="Courage Livingstone"
+              fill
+              priority={priority}
+              quality={90}
+              sizes="(min-width: 1024px) 640px, 100vw"
+              className="portrait-photo object-cover object-[center_18%]"
+            />
+          </motion.div>
+          <div className="portrait-light pointer-events-none absolute inset-0" />
+        </div>
+      </div>
+      <figcaption className="portrait-meta mt-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">
+        <span>Courage Livingstone</span>
+        <span>Product design × frontend</span>
+      </figcaption>
+    </figure>
+  );
+};
+
+export default Portrait;

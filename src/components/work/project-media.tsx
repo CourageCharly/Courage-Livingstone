@@ -1,0 +1,43 @@
+import Image from "next/image";
+import ProjectFrame from "@/components/work/project-frame";
+import { cn } from "@/lib";
+
+type Props = {
+  cover: string;
+  title: string;
+  priority?: boolean;
+  className?: string;
+  alt?: string;
+  sizes?: string;
+};
+
+const ProjectMedia = ({
+  cover,
+  title,
+  priority = false,
+  className,
+  alt,
+  sizes = "(min-width: 1024px) 960px, 100vw",
+}: Props) => {
+  const frame = cover.startsWith("frame:") ? cover.slice("frame:".length) : null;
+
+  return (
+    <div className={cn("relative aspect-[16/10] overflow-hidden bg-[#0c0c0b]", className)}>
+      {frame ? (
+        <ProjectFrame kind={frame} className="absolute inset-0" />
+      ) : (
+        <Image
+          src={cover}
+          alt={alt ?? `${title} interface`}
+          fill
+          priority={priority}
+          quality={90}
+          className="object-cover object-top"
+          sizes={sizes}
+        />
+      )}
+    </div>
+  );
+};
+
+export default ProjectMedia;

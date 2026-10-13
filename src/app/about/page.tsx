@@ -71,12 +71,12 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden border-t border-white/10 py-20 md:py-28">
         <PageWrapper className="relative">
-          <Rise className="flex flex-wrap items-end justify-between gap-6">
-            <div>
+          <Rise className="flex items-end justify-between gap-4">
+            <div className="min-w-0">
               <p className="kicker text-lime">Experience</p>
               <h2 className="display mt-4 text-4xl sm:text-6xl">Roles, in order.</h2>
             </div>
-            <Link href="/experience" className="text-sm text-lime underline-offset-4 hover:underline">
+            <Link href="/experience" className="mb-1 shrink-0 text-sm text-lime underline-offset-4 hover:underline">
               Full experience →
             </Link>
           </Rise>

@@ -261,6 +261,74 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "locepx",
+    title: "Locepx",
+    year: "2026",
+    featured: false,
+    label: "Product design · Team",
+    summary:
+      "Locepx helps organisations develop leaders. I worked with the team and did most of the product design, plus QA and UX research.",
+    cover: "/images/locepx/home.jpg",
+    live: "https://www.locepx.com/",
+    tags: ["Product design", "UX research", "QA", "Team"],
+    design: ["Homepage", "Programmes", "Corporate solutions", "Contact"],
+    development: [],
+    role: "Product Designer",
+    services: ["Product design", "UX research", "QA"],
+    stack: ["Figma"],
+    challenge:
+      "A leader looking for a programme, and a company looking for a custom one, needed a clear way through the same site.",
+    approach:
+      "This is a team project. I did most of the product design. I also did the QA and the UX research, checking the pages against how people look for a programme and ask for help.",
+    outcome:
+      "locepx.com opens on the programmes and a way to talk to the team. The programme list can be searched. Corporate solutions explains a programme built around the business.",
+    build:
+      "This is a team project. I did most of the design. I did not build the site alone. The screens are from the live site.",
+    highlights: [
+      "A team project where I did most of the product design",
+      "QA and UX research on the live pages",
+      "Home, programmes, and corporate solutions share one path",
+      "The live site is locepx.com",
+    ],
+    screens: [
+      {
+        cover: "/images/locepx/home.jpg",
+        label: "Homepage",
+        caption: "The homepage introduces Locepx and points to the programmes.",
+      },
+      {
+        cover: "/images/locepx/programmes.jpg",
+        label: "Programmes",
+        caption: "Programmes can be searched, then opened by focus area.",
+      },
+      {
+        cover: "/images/locepx/corporate.jpg",
+        label: "Corporate",
+        caption: "Corporate solutions explains a programme built around the business.",
+      },
+      {
+        cover: "/images/locepx/about.jpg",
+        label: "About",
+        caption: "About states why Locepx exists and how to explore the programmes.",
+      },
+      {
+        cover: "/images/locepx/contact.jpg",
+        label: "Contact",
+        caption: "Contact is where a leader or a company sends a message.",
+      },
+    ],
+    system: {
+      typeface: "Inter",
+      colors: [
+        { name: "Night", value: "#030711" },
+        { name: "Type", value: "#F8FAFC" },
+        { name: "Action", value: "#F15B07" },
+        { name: "Paper", value: "#FFFFFF" },
+        { name: "Ink", value: "#221D23" },
+      ],
+    },
+  },
+  {
     slug: "exyra",
     title: "Exyra",
     year: "2025",
@@ -756,7 +824,11 @@ projects.sort((a, b) => Number(b.year) - Number(a.year));
 export const featuredProjects = projects.filter((project) => project.featured !== false);
 
 export const navProjects = projects.filter(
-  (project) => project.featured !== false || project.slug === "farm-rush" || project.slug === "uncle-tobi",
+  (project) =>
+    project.featured !== false ||
+    project.slug === "farm-rush" ||
+    project.slug === "uncle-tobi" ||
+    project.slug === "locepx",
 );
 
 export const fillsFrame = (slug: string) =>

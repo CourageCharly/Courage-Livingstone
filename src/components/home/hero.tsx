@@ -163,7 +163,7 @@ const Hero = () => {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/work"
-              className="inline-flex rounded-full bg-lime px-5 py-2.5 text-sm font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn-lime inline-flex rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
               View my work
             </Link>

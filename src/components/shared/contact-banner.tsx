@@ -8,8 +8,9 @@ const ContactBanner = () => {
   return (
     <section className="border-t border-white/10 py-20 md:py-16">
       <PageWrapper>
-        <div className="panel px-6 py-8 sm:px-10 sm:py-10 md:hidden">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <div className="panel relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10 md:hidden">
+          <TechCorners />
+          <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Next</p>
               <h2 className="display mt-4 text-4xl">Let’s work together.</h2>
@@ -17,7 +18,7 @@ const ContactBanner = () => {
             </div>
             <Link
               href="/contact"
-              className="inline-flex w-fit shrink-0 rounded-full bg-lime px-6 py-3 text-sm font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
               Let’s connect
             </Link>
@@ -33,7 +34,7 @@ const ContactBanner = () => {
             </div>
             <Link
               href="/contact"
-              className="inline-flex w-fit shrink-0 rounded-full bg-lime px-6 py-3 text-sm font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
               Let’s connect
             </Link>

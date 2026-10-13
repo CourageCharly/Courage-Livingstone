@@ -9,6 +9,7 @@ const ContactCta = () => {
     <section className="border-t border-border py-20 md:py-16">
       <PageWrapper>
         <div className="panel relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10 md:hidden">
+          <TechCorners />
           <div className="pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full bg-lime/15 blur-3xl" />
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">
@@ -18,7 +19,7 @@ const ContactCta = () => {
             </div>
             <Link
               href="/contact"
-              className="inline-flex w-fit shrink-0 rounded-full bg-lime px-6 py-3 text-sm font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
               Let&apos;s connect
             </Link>
@@ -37,7 +38,7 @@ const ContactCta = () => {
             </div>
             <Link
               href="/contact"
-              className="inline-flex w-fit shrink-0 rounded-full bg-lime px-6 py-3 text-sm font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
               Let&apos;s connect
             </Link>

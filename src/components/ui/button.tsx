@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "btn-lime hover:brightness-95",
+          "btn-lime",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         outline:

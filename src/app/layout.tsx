@@ -62,7 +62,26 @@ export default function RootLayout({
       className={`dark ${space.variable} ${syne.variable} ${jetbrains.variable} ${space.className}`}
     >
       <head>
-        <meta name="color-scheme" content="only light" />
+        <meta name="color-scheme" content="light only" />
+        <style href="btn-lime-lock" precedence="high">{`
+          .btn-lime,
+          .btn-lime:hover,
+          .btn-lime:focus,
+          .btn-lime:active,
+          .btn-lime:visited {
+            color-scheme: light only;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #c6f135;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23c6f135'/%3E%3C/svg%3E"), linear-gradient(#c6f135, #c6f135);
+            background-repeat: repeat, no-repeat;
+            background-size: 2px 2px, 100% 100%;
+            color: #101408;
+            -webkit-text-fill-color: #101408;
+            forced-color-adjust: none;
+            filter: none;
+          }
+        `}</style>
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <a

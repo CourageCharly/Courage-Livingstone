@@ -31,7 +31,7 @@ const SelectedWork = () => {
   }, [shown]);
 
   return (
-    <div id="work" className="pb-20 md:pb-28">
+    <div id="work" className="lg:pb-28">
       <section className="border-t border-border py-20 lg:hidden">
         <PageWrapper>
           <div className="mb-6 flex w-full flex-wrap items-end justify-between gap-x-4 gap-y-2">

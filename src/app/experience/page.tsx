@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <article>
-      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+      <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
         <TechMarks />
         <PageWrapper className="relative">
           <p className="kicker text-lime">Experience — {site.location}</p>

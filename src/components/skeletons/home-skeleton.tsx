@@ -21,7 +21,7 @@ const HomeSkeleton = () => {
         </div>
         </div>
       </section>
-      <section className="border-t border-white/10 py-16">
+      <section className="border-t border-white/10 py-20">
         <PageWrapper className="grid gap-10 lg:grid-cols-12">
           <div className="space-y-4 lg:col-span-5">
             <Skeleton className="h-3 w-16" />

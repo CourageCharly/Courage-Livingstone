@@ -4,7 +4,7 @@ import { site } from "@/lib";
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="width-layout grid gap-12 py-16 md:grid-cols-12 md:py-20">
+      <div className="width-layout grid gap-12 py-20 md:grid-cols-12">
         <div className="md:col-span-6">
           <p className="text-3xl font-medium tracking-[-0.045em] sm:text-4xl">{site.name}</p>
           <p className="mt-4 max-w-sm text-muted-foreground">

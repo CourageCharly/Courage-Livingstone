@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <section className="relative overflow-x-clip pt-28 pb-10 md:pt-36 md:pb-12">
+      <section className="relative overflow-x-clip pt-28 pb-20 md:pt-36 md:pb-12">
         <TechMarks />
         <PageWrapper className="relative">
           <p className="kicker text-lime">Work</p>

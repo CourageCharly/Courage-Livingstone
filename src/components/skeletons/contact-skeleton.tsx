@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const ContactSkeleton = () => {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 md:pt-32">
+    <section className="relative overflow-hidden pt-28 pb-20 md:pt-32">
       <TechMarks />
       <PageWrapper className="relative">
         <Skeleton className="h-3 w-48" />

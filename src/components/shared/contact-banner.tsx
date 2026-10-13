@@ -6,7 +6,7 @@ import Rise from "@/components/motion/rise";
 
 const ContactBanner = () => {
   return (
-    <section className="border-t border-white/10 py-12 md:py-16">
+    <section className="border-t border-white/10 py-20 md:py-16">
       <PageWrapper>
         <Rise className="panel relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10">
           <TechCorners />

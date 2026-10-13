@@ -44,7 +44,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   const imageFit = "!object-cover object-center";
 
   return (
-    <article className="pb-8">
+    <article>
       <div className="relative overflow-hidden pt-28 pb-4 md:pt-36">
         <TechMarks />
       <PageWrapper className="relative">
@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       </PageWrapper>
       </div>
 
-      <PageWrapper className="mt-12 md:mt-16">
+      <PageWrapper className="mt-16">
         <div className="clip-rise overflow-hidden rounded-[22px] border border-border">
           <Parallax amount={18}>
             <ProjectMedia
@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         </div>
       </PageWrapper>
 
-      <PageWrapper className="mt-20 grid gap-12 border-t border-border py-16 md:mt-28 md:grid-cols-12 md:py-24">
+      <PageWrapper className="mt-20 grid gap-12 border-t border-border py-20 md:mt-28 md:grid-cols-12 md:py-24">
         <Rise className="md:col-span-4">
           <p className="kicker">Challenge</p>
           <h2 className="mt-4 font-serif text-4xl tracking-[-0.045em]">The problem</h2>
@@ -111,7 +111,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         </Rise>
       </PageWrapper>
 
-      <PageWrapper className="grid gap-12 border-t border-border py-16 md:grid-cols-12 md:py-24">
+      <PageWrapper className="grid gap-12 border-t border-border py-20 md:grid-cols-12 md:py-24">
         <Rise className="md:col-span-4">
           <p className="kicker">Approach</p>
           <h2 className="mt-4 font-serif text-4xl tracking-[-0.045em]">How it was shaped</h2>
@@ -121,7 +121,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         </Rise>
       </PageWrapper>
 
-      <section className="border-t border-border py-16 md:py-24">
+      <section className="border-t border-border py-20 md:py-24">
         <PageWrapper>
           <Rise>
             <p className="kicker">Process</p>
@@ -140,7 +140,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         </PageWrapper>
       </section>
 
-      <section className="border-t border-border py-16 md:py-24">
+      <section className="border-t border-border py-20 md:py-24">
         <PageWrapper>
           <Rise>
             <p className="kicker">Interface</p>
@@ -205,7 +205,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         </PageWrapper>
       </section>
 
-      <section className="border-t border-border py-16 md:py-24">
+      <section className="border-t border-border py-20 md:py-24">
         <PageWrapper className="grid gap-10 md:grid-cols-12">
           <Rise className="md:col-span-4">
             <p className="kicker">Frontend</p>
@@ -234,7 +234,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       </section>
 
       <section className="border-t border-border" data-other-projects>
-        <PageWrapper className="py-16 md:py-24">
+        <PageWrapper className="py-20 md:py-24">
           <p className="kicker text-lime">Other projects</p>
           <h2 className="display mt-3 text-2xl break-words sm:text-3xl">Three more from the archive.</h2>
           <WorkCardsSlide projects={others} label="Three more from the archive" className="mt-10 md:hidden" />

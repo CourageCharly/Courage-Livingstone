@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Space_Grotesk, Syne } from "next/font/google";
 import { site } from "@/lib";
 import Navbar from "@/components/layout/navbar";
@@ -27,6 +27,14 @@ const jetbrains = JetBrains_Mono({
   weight: ["400", "500"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  colorScheme: "dark",
+  themeColor: "#070807",
+};
 
 export const metadata: Metadata = {
   title: {

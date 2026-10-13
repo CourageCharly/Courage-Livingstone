@@ -83,8 +83,9 @@
   }
 
   .btn-lime {
+    -webkit-appearance: none;
     appearance: none;
-    background-color: #c6f135;
+    background: #c6f135;
     color: #101408;
   }
 }
@@ -97,6 +98,7 @@
   html {
     @apply scroll-smooth bg-background;
     overflow-x: clip;
+    color-scheme: dark;
   }
 
   body {

@@ -71,14 +71,14 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden border-t border-white/10 py-20 md:py-28">
         <PageWrapper className="relative">
-          <Rise className="flex items-end justify-between gap-4">
-            <div className="min-w-0">
-              <p className="kicker text-lime">Experience</p>
-              <h2 className="display mt-4 text-4xl sm:text-6xl">Roles, in order.</h2>
+          <Rise>
+            <p className="kicker text-lime">Experience</p>
+            <div className="mt-4 flex items-start justify-between gap-4 md:items-end">
+              <h2 className="display min-w-0 text-4xl sm:text-6xl">Roles, in order.</h2>
+              <Link href="/experience" className="shrink-0 text-sm text-lime underline-offset-4 hover:underline md:mb-1">
+                Full experience →
+              </Link>
             </div>
-            <Link href="/experience" className="mb-1 shrink-0 text-sm text-lime underline-offset-4 hover:underline">
-              Full experience →
-            </Link>
           </Rise>
           <div className="mt-12 grid gap-4 md:hidden">
             {experience.slice(0, 2).map((item) => (

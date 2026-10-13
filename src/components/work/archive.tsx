@@ -123,14 +123,14 @@ function ProjectList({
             </Link>
             {mobileImages ? (
               <div className="pb-6 lg:hidden">
-                <div className="overflow-hidden rounded-[22px]">
+                <Link href={`/work/${project.slug}`} className="block overflow-hidden rounded-[22px] outline-none">
                   <ProjectMedia
                     cover={project.cover}
                     title={project.title}
                     className="rounded-[22px]"
                     imageClassName="!object-cover object-center"
                   />
-                </div>
+                </Link>
                 <p className="mt-4 text-base text-muted-foreground sm:text-lg">{project.summary}</p>
               </div>
             ) : null}

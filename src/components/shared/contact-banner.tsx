@@ -8,7 +8,7 @@ const ContactBanner = () => {
   return (
     <section className="border-t border-white/10 py-20 md:py-16">
       <PageWrapper>
-        <div className="md:hidden">
+        <div className="panel px-6 py-8 sm:px-10 sm:py-10 md:hidden">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="kicker text-lime">Next</p>

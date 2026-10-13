@@ -4,7 +4,14 @@ import { useLayoutEffect, useState, type RefObject } from "react";
 
 export function indexFromProgress(value: number, count: number) {
   if (count <= 1) return 0;
-  return Math.min(count - 1, Math.max(0, Math.floor(value * count)));
+  const clamped = Math.min(1, Math.max(0, value));
+  if (clamped >= 1) return count - 1;
+  return Math.min(count - 1, Math.floor(clamped * count));
+}
+
+/** Sticky viewport plus one 78vh slice of travel for each project. */
+export function pinTrackHeight(count: number) {
+  return `calc(100svh + ${Math.max(count, 1)} * 78vh)`;
 }
 
 export function usePinnedWork(
@@ -43,8 +50,13 @@ export function usePinnedWork(
 
     apply(false);
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    const observer = new ResizeObserver(onScroll);
+    observer.observe(el);
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      observer.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, [count, reduce, sectionRef]);

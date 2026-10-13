@@ -8,11 +8,12 @@ const HomeSkeleton = () => {
         <div className="width-layout relative">
         <div className="mx-auto flex max-w-4xl flex-col items-center">
           <div aria-hidden className="pointer-events-none absolute top-[calc(50%+2.75rem)] left-1/2 h-[min(96vw,38rem)] w-[min(96vw,38rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-          <Skeleton className="h-3 w-56" />
-          <Skeleton className="mt-4 h-14 w-[min(92vw,36rem)]" />
-          <Skeleton className="mt-2 h-14 w-[min(70vw,24rem)]" />
-          <Skeleton className="mt-2 h-14 w-[min(52vw,16rem)]" />
-          <Skeleton className="mt-5 h-4 w-80 max-w-full" />
+          <Skeleton className="h-3 w-56 max-w-full" />
+          <Skeleton className="mt-4 h-12 w-full max-w-[36rem] sm:h-16" />
+          <Skeleton className="mt-2 h-12 w-[88%] max-w-[24rem] sm:h-16" />
+          <Skeleton className="mt-2 h-12 w-[72%] max-w-[16rem] sm:h-16" />
+          <Skeleton className="mt-2 h-12 w-[64%] max-w-[14rem] sm:hidden" />
+          <Skeleton className="mt-5 h-4 w-full max-w-xs" />
           <div className="mt-5 flex gap-3">
             <Skeleton className="h-10 w-32 rounded-full" />
             <Skeleton className="h-10 w-40 rounded-full" />

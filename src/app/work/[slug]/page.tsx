@@ -9,6 +9,7 @@ import Parallax from "@/components/motion/parallax";
 import MaskLines from "@/components/shared/mask-lines";
 import TextLink, { Arrow } from "@/components/shared/text-link";
 import ProjectMedia from "@/components/work/project-media";
+import WorkCardsSlide from "@/components/work/work-cards-slide";
 import TokenBoard from "@/components/work/token-board";
 
 type Params = { slug: string };
@@ -54,7 +55,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         <p className="kicker mt-10">
           {project.label} — {project.year}
         </p>
-        <h1 className="display mt-5 text-[clamp(3.6rem,9vw,8rem)]">
+        <h1 className="display mt-5 text-[clamp(2.4rem,11vw,8rem)] break-words">
           <MaskLines lines={[project.title]} />
         </h1>
         <p className="load-rise load-d2 mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -231,8 +232,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       <section className="border-t border-border" data-other-projects>
         <PageWrapper className="py-16 md:py-24">
           <p className="kicker text-lime">Other projects</p>
-          <h2 className="display mt-3 text-2xl sm:text-3xl">Three more from the archive.</h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <h2 className="display mt-3 text-2xl break-words sm:text-3xl">Three more from the archive.</h2>
+          <WorkCardsSlide projects={others} label="Three more from the archive" className="mt-10 md:hidden" />
+          <div className="mt-10 hidden gap-4 md:grid md:grid-cols-3">
             {others.map((item) => (
               <Link
                 key={item.slug}

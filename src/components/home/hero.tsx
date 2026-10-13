@@ -30,18 +30,34 @@ function Line({
   caret: number | null;
 }) {
   const at = accent ? text.indexOf(accent) : -1;
+  const words = text.split(" ");
+  let consumed = 0;
   return (
-    <span className="relative block whitespace-nowrap max-[360px]:whitespace-normal">
+    <span className="relative block whitespace-normal sm:whitespace-nowrap">
       {caret === 0 ? <span className="caret absolute top-[0.12em] left-0" /> : null}
-      {text.split("").map((character, index) => {
-        const lime = at >= 0 && index >= at && index < at + accent.length;
+      {words.map((word, wordIndex) => {
+        const start = consumed;
+        consumed += word.length + 1;
         return (
-          <span
-            key={`${character}-${index}`}
-            className={`hero-char relative${index < count ? " is-on" : ""}${lime ? " text-lime" : ""}`}
-          >
-            {character === " " ? "\u00A0" : character}
-            {caret === index + 1 ? <span className="caret absolute top-[0.12em] -right-1" /> : null}
+          <span key={`${word}-${wordIndex}`}>
+            {wordIndex > 0 ? (
+              <span className={`hero-char hero-space${start - 1 < count ? " is-on" : ""}`}> </span>
+            ) : null}
+            <span className="inline-block whitespace-nowrap">
+              {word.split("").map((character, index) => {
+                const absolute = start + index;
+                const lime = at >= 0 && absolute >= at && absolute < at + accent.length;
+                return (
+                  <span
+                    key={`${character}-${absolute}`}
+                    className={`hero-char relative${absolute < count ? " is-on" : ""}${lime ? " text-lime" : ""}`}
+                  >
+                    {character}
+                    {caret === absolute + 1 ? <span className="caret absolute top-[0.12em] -right-1" /> : null}
+                  </span>
+                );
+              })}
+            </span>
           </span>
         );
       })}
@@ -130,7 +146,7 @@ const Hero = () => {
         <div data-hero-copy className="relative w-full">
           <p className="kicker text-lime">{site.role}</p>
           <h1
-            className={`display mt-3 text-[clamp(1.55rem,6.4vw,4.15rem)] text-foreground${mode === "type" ? " hero-write" : ""}`}
+            className={`display mt-3 text-[clamp(2.8rem,5vw,4.15rem)] leading-[1.02] text-foreground sm:leading-[0.9]${mode === "type" ? " hero-write" : ""}`}
             data-typing={mode}
           >
             {lines.map((line, index) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import { cn, featuredProjects, fillsFrame } from "@/lib";
@@ -8,81 +8,48 @@ import PageWrapper from "@/components/layout/page-wrapper";
 import { Arrow } from "@/components/shared/text-link";
 import { TechCorners } from "@/components/layout/tech-marks";
 import ProjectMedia from "@/components/work/project-media";
-import { usePinnedWork } from "@/components/work/use-pinned-work";
+import WorkCardsSlide from "@/components/work/work-cards-slide";
+import { pinTrackHeight, usePinnedWork } from "@/components/work/use-pinned-work";
 
 const selected = featuredProjects.slice(0, 3);
 
 const SelectedWork = () => {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const { setHovered, shown } = usePinnedWork(sectionRef, selected.length, reduce);
   const project = selected[shown];
 
-  if (reduce) {
-    return (
-      <section id="work" className="border-t border-border py-20">
-        <PageWrapper className="space-y-6">
-          <div className="flex w-full flex-wrap items-end justify-between gap-6">
-            <h2 className="display text-5xl">Selected work</h2>
-            <Link href="/work" className="text-sm text-lime underline-offset-4 hover:underline">
-              Full work →
-            </Link>
-          </div>
-          <div className="lg:grid lg:grid-cols-12 lg:items-stretch lg:gap-10" onMouseLeave={() => setHovered(null)}>
-            <div className="lg:col-span-5">
-              <ProjectList items={selected} active={shown} onHover={setHovered} mobileImages />
-            </div>
-            <div className="relative hidden lg:col-span-7 lg:block">
-              <Preview items={selected} shown={shown} project={project} />
-            </div>
-          </div>
-        </PageWrapper>
-      </section>
-    );
-  }
+  useLayoutEffect(() => {
+    const root = listRef.current;
+    const item = root?.querySelector<HTMLElement>(`[data-work-item="${shown}"]`);
+    if (!root || !item) return;
+    const rootRect = root.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    if (itemRect.top < rootRect.top) root.scrollTop -= rootRect.top - itemRect.top;
+    else if (itemRect.bottom > rootRect.bottom) root.scrollTop += itemRect.bottom - rootRect.bottom;
+  }, [shown]);
 
   return (
     <div id="work" className="pb-20 md:pb-28">
       <section className="border-t border-border py-20 lg:hidden">
         <PageWrapper>
-          <div className="mb-6 flex w-full items-end justify-between gap-4">
-            <h2 className="display min-w-0 text-[1.85rem] sm:text-4xl">Selected work</h2>
+          <div className="mb-6 flex w-full flex-wrap items-end justify-between gap-x-4 gap-y-2">
+            <h2 className="display min-w-0 text-[clamp(2rem,8vw,3rem)]">Selected work</h2>
             <Link href="/work" className="shrink-0 text-sm text-lime underline-offset-4 hover:underline">
               Full work →
             </Link>
           </div>
-          <div className="-mx-[5%] flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-[5%] pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
-            {selected.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/work/${item.slug}`}
-                className="panel w-[min(82%,20.5rem)] shrink-0 snap-start overflow-hidden sm:w-[70%]"
-              >
-                <ProjectMedia
-                  cover={item.cover}
-                  title={item.title}
-                  className="aspect-[16/10] rounded-none border-0"
-                  imageClassName="!object-cover object-center"
-                />
-                <div className="p-4 sm:p-5">
-                  <p className="kicker text-lime">
-                    {item.label}
-                    <span className="whitespace-nowrap"> · {item.year}</span>
-                  </p>
-                  <h3 className="mt-2 text-xl break-words sm:text-2xl">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground sm:text-lg">{item.summary}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <WorkCardsSlide projects={selected} label="Selected work" />
         </PageWrapper>
       </section>
       <section
-        ref={sectionRef}
+        ref={reduce ? undefined : sectionRef}
         data-work-stage={project.slug}
+        data-work-count={selected.length}
         className="relative hidden border-t border-border lg:block"
         data-work-pin
-        style={{ height: `${(selected.length + 0.5) * 78}vh` }}
+        style={reduce ? undefined : { height: pinTrackHeight(selected.length) }}
       >
         <div className="sticky top-[4.5rem] overflow-hidden pt-8 pb-8" style={{ height: "calc(100svh - 4.5rem)" }}>
           <PageWrapper className="flex h-full flex-col">
@@ -96,7 +63,10 @@ const SelectedWork = () => {
               className="grid min-h-0 flex-1 grid-cols-12 content-start items-stretch gap-10"
               onMouseLeave={() => setHovered(null)}
             >
-              <div className="col-span-5 min-h-0">
+              <div
+                ref={listRef}
+                className="col-span-5 h-full min-h-0 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              >
                 <ProjectList items={selected} active={shown} onHover={setHovered} />
               </div>
               <div className="relative col-span-7 min-h-0 pt-4">
@@ -114,19 +84,17 @@ function ProjectList({
   items,
   active,
   onHover,
-  mobileImages = false,
 }: {
   items: typeof selected;
   active: number;
   onHover: (index: number) => void;
-  mobileImages?: boolean;
 }) {
   return (
     <ul>
       {items.map((project, index) => {
         const on = index === active;
         return (
-          <li key={project.slug} className="border-b border-border last:border-b-0">
+          <li key={project.slug} data-work-item={index} className="border-b border-border last:border-b-0">
             <Link
               href={`/work/${project.slug}`}
               data-cursor="Open"
@@ -149,21 +117,6 @@ function ProjectList({
               </span>
               <Arrow />
             </Link>
-            {mobileImages ? (
-              <div className="pb-6 lg:hidden">
-                <div className="overflow-hidden rounded-[22px]">
-                  <ProjectMedia
-                    cover={project.cover}
-                    title={project.title}
-                    className="rounded-[22px]"
-                    imageClassName={
-                      fillsFrame(project.slug) ? "!object-cover object-center" : "object-contain object-center"
-                    }
-                  />
-                </div>
-                <p className="mt-4 text-base text-muted-foreground sm:text-lg">{project.summary}</p>
-              </div>
-            ) : null}
           </li>
         );
       })}

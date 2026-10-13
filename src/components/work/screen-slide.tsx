@@ -15,13 +15,13 @@ const ScreenSlide = ({ screens, title, className }: Props) => {
     <div className={cn("-mr-[5vw] w-[calc(100%+5vw)]", className)} data-screen-slide>
       <div
         aria-label={`${title} screens`}
-        className="flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pr-[5vw] pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline-start:0px] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline:0px] [&::-webkit-scrollbar]:hidden"
       >
         {screens.map((screen) => (
           <figure
             key={screen.label}
             data-slide
-            className="w-[min(82%,20.5rem)] shrink-0 snap-start snap-always"
+            className="w-[min(82%,20.5rem)] shrink-0 snap-start snap-always last:snap-end"
           >
             <div className="overflow-hidden rounded-[22px] border border-border">
               <ProjectMedia
@@ -39,7 +39,6 @@ const ScreenSlide = ({ screens, title, className }: Props) => {
             </figcaption>
           </figure>
         ))}
-        <div aria-hidden className="w-[calc(100%-min(82%,20.5rem))] shrink-0" />
       </div>
     </div>
   );

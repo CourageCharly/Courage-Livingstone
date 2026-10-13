@@ -21,7 +21,7 @@ const ContactCta = () => {
               href="/contact"
               className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Let&apos;s connect
+              <span className="btn-ink">Let&apos;s connect</span>
             </Link>
           </div>
         </div>
@@ -40,7 +40,7 @@ const ContactCta = () => {
               href="/contact"
               className="btn-lime inline-flex w-fit shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
-              Let&apos;s connect
+              <span className="btn-ink">Let&apos;s connect</span>
             </Link>
           </div>
         </Rise>

@@ -81,6 +81,17 @@ export default function RootLayout({
             forced-color-adjust: none;
             filter: none;
           }
+          .btn-ink {
+            color: transparent;
+            color-scheme: light only;
+            forced-color-adjust: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23101408'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 2px 2px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
         `}</style>
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">

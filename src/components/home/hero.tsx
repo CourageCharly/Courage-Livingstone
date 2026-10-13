@@ -165,7 +165,7 @@ const Hero = () => {
               href="/work"
               className="btn-lime inline-flex rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-300 hover:-translate-y-0.5"
             >
-              View my work
+              <span className="btn-ink">View my work</span>
             </Link>
             <Link
               href="/contact"

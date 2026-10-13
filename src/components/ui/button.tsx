@@ -49,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : null}
-        {children}
+        {variant === undefined || variant === "default" ? <span className="btn-ink">{children}</span> : children}
       </button>
     );
   },

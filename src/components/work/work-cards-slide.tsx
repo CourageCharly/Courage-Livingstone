@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
-import { cn } from "@/lib";
 import ProjectMedia from "@/components/work/project-media";
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 
 const WorkCardsSlide = ({ projects, label, className }: Props) => {
   return (
-    <div className={cn("-mr-[5vw] w-[calc(100%+5vw)]", className)} data-work-slide data-work-count={projects.length}>
+    <div className={className} data-work-slide data-work-count={projects.length}>
       <div
         aria-label={label}
         className="flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline:0px] [&::-webkit-scrollbar]:hidden"

@@ -1,5 +1,4 @@
 import type { ProjectScreen } from "@/lib/projects";
-import { cn } from "@/lib";
 import ProjectMedia from "@/components/work/project-media";
 
 type Props = {
@@ -12,7 +11,7 @@ const ScreenSlide = ({ screens, title, className }: Props) => {
   if (screens.length === 0) return null;
 
   return (
-    <div className={cn("-mr-[5vw] w-[calc(100%+5vw)]", className)} data-screen-slide>
+    <div className={className} data-screen-slide>
       <div
         aria-label={`${title} screens`}
         className="flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline:0px] [&::-webkit-scrollbar]:hidden"

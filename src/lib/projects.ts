@@ -288,7 +288,7 @@ export const projects: Project[] = [
       "A team project where I did most of the product design",
       "QA and UX research on the live pages",
       "Home, programmes, and corporate solutions share one path",
-      "The live site is locepx.com",
+      "A clean, minimalist design with a simple, modern, and consistent visual style.",
     ],
     screens: [
       {

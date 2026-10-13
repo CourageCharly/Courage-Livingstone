@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
-import { cn, featuredProjects, fillsFrame } from "@/lib";
+import { cn, featuredProjects } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import { Arrow } from "@/components/shared/text-link";
 import { TechCorners } from "@/components/layout/tech-marks";
@@ -156,9 +156,7 @@ function Preview({
               priority={index < 3}
               loading="eager"
               className="rounded-none border-0"
-              imageClassName={
-                fillsFrame(item.slug) ? "!object-cover object-center" : "object-contain object-center"
-              }
+              imageClassName="!object-cover object-center"
             />
           </div>
         ))}

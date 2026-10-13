@@ -3,7 +3,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
-import { cn, fillsFrame, projects } from "@/lib";
+import { cn, projects } from "@/lib";
 import { Arrow } from "@/components/shared/text-link";
 import { TechCorners } from "@/components/layout/tech-marks";
 import PageWrapper from "@/components/layout/page-wrapper";
@@ -128,9 +128,7 @@ function ProjectList({
                     cover={project.cover}
                     title={project.title}
                     className="rounded-[22px]"
-                    imageClassName={
-                      fillsFrame(project.slug) ? "!object-cover object-center" : "object-contain object-center"
-                    }
+                    imageClassName="!object-cover object-center"
                   />
                 </div>
                 <p className="mt-4 text-base text-muted-foreground sm:text-lg">{project.summary}</p>
@@ -166,9 +164,7 @@ function Preview({
               priority={index < 3}
               loading="eager"
               className="!aspect-auto h-full w-full rounded-none border-0"
-              imageClassName={
-                fillsFrame(item.slug) ? "!object-cover object-center" : "object-contain object-center"
-              }
+              imageClassName="!object-cover object-center"
             />
           </div>
         ))}

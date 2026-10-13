@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { fillsFrame, getOtherProjects, getProject, projects, site } from "@/lib";
+import { getOtherProjects, getProject, projects, site } from "@/lib";
 import PageWrapper from "@/components/layout/page-wrapper";
 import TechMarks, { TechCorners } from "@/components/layout/tech-marks";
 import Rise from "@/components/motion/rise";
@@ -9,6 +9,7 @@ import Parallax from "@/components/motion/parallax";
 import MaskLines from "@/components/shared/mask-lines";
 import TextLink, { Arrow } from "@/components/shared/text-link";
 import ProjectMedia from "@/components/work/project-media";
+import ScreenSlide from "@/components/work/screen-slide";
 import WorkCardsSlide from "@/components/work/work-cards-slide";
 import TokenBoard from "@/components/work/token-board";
 
@@ -40,9 +41,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const others = getOtherProjects(project.slug, 3);
-  const imageFit = fillsFrame(project.slug)
-    ? "!object-cover object-center"
-    : "object-contain object-center";
+  const imageFit = "!object-cover object-center";
 
   return (
     <article className="pb-8">
@@ -167,7 +166,12 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                 </figure>
               </Rise>
             ) : null}
-            <div className="grid gap-6 sm:grid-cols-2">
+            <ScreenSlide
+              screens={project.screens.slice(1)}
+              title={project.title}
+              className="md:hidden"
+            />
+            <div className="hidden gap-6 md:grid md:grid-cols-2">
               {project.screens.slice(1).map((screen) => (
                 <Rise key={screen.label}>
                   <figure>
@@ -247,7 +251,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                   cover={item.cover}
                   title={item.title}
                   className="w-full rounded-none border-0"
-                  imageClassName="object-contain object-center"
+                  imageClassName="!object-cover object-center"
                   sizes="(min-width: 768px) 33vw, 100vw"
                 />
                 <div className="p-5">

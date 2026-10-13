@@ -121,7 +121,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-56 md:pt-40 md:pb-72">
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-72">
       <div className="hero-wash hero-wash-a" />
       <div className="hero-wash hero-wash-b" />
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 opacity-40" />

@@ -37,7 +37,7 @@ const ProjectMedia = ({
           priority={priority}
           quality={90}
           loading={priority ? undefined : loading}
-          className={cn("object-contain object-center", imageClassName)}
+          className={cn("object-cover object-center", imageClassName)}
           sizes={sizes}
         />
       )}

@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 const HomeSkeleton = () => {
   return (
     <div>
-      <section className="relative overflow-hidden pt-32 pb-56 md:pt-40 md:pb-72">
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-72">
         <div className="width-layout relative">
         <div className="mx-auto flex max-w-4xl flex-col items-center">
           <div aria-hidden className="pointer-events-none absolute top-[calc(50%+2.75rem)] left-1/2 h-[min(96vw,38rem)] w-[min(96vw,38rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />

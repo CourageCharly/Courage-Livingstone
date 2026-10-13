@@ -8,7 +8,19 @@ const ContactBanner = () => {
   return (
     <section className="border-t border-white/10 py-20 md:py-16">
       <PageWrapper>
-        <Rise className="panel relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10">
+        <div className="md:hidden">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="kicker text-lime">Next</p>
+              <h2 className="display mt-4 text-4xl">Let’s work together.</h2>
+            </div>
+            <Link href="/contact" className="text-sm text-lime underline-offset-4 hover:underline">
+              Let’s connect →
+            </Link>
+          </div>
+          <p className="mt-4 max-w-xl text-lg text-muted-foreground">{site.availabilityNote}</p>
+        </div>
+        <Rise className="panel relative hidden overflow-hidden px-6 py-8 sm:px-10 sm:py-10 md:block">
           <TechCorners />
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">

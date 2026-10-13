@@ -613,9 +613,9 @@ export const projects: Project[] = [
     title: "Uncle Tobi",
     year: "2025",
     featured: false,
-    label: "Ecommerce · Product design",
+    label: "Product design · Team",
     summary:
-      "A recipes and tips site for Nigerian cooking. I designed the home page, the recipe list, cooking tips, and video tutorials so the site feels like a kitchen, not a catalogue.",
+      "A recipes and tips site for Nigerian cooking. I worked with the team on the home page, the recipe list, cooking tips, and video tutorials.",
     cover: "/images/uncle-tobi/home.png",
     tags: ["Product design", "Ecommerce", "Web design", "Figma"],
     design: ["Homepage", "Recipes listing", "Cooking tips", "Video tutorials"],
@@ -626,11 +626,11 @@ export const projects: Project[] = [
     challenge:
       "People needed to search for a dish, read a tip, or watch a tutorial without getting lost in a dense shop layout.",
     approach:
-      "I designed Uncle Tobi as one scroll: a search, the latest recipes, cooking tips, and video tutorials, with the shop in the header.",
+      "I worked with the team. Uncle Tobi is one scroll: a search, the latest recipes, cooking tips, and video tutorials, with the shop in the header.",
     outcome:
       "The design opens on Simple and Tasty Recipes. Jollof and egusi are on the first screen, and the recipe list keeps saved dishes close by.",
     build:
-      "This is a design case from Behance, drawn in Figma. It is not a coded website.",
+      "This is a team project. I contributed to the design in Figma. The screens are the shared design, not a solo build.",
     highlights: [
       "A search on the first screen for a recipe or a cooking tip",
       "Latest recipes lead with jollof, egusi, and moi moi",

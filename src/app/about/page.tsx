@@ -80,7 +80,20 @@ export default function AboutPage() {
               Full experience →
             </Link>
           </Rise>
-          <div className="mt-12 grid gap-4">
+          <div className="mt-12 grid gap-4 md:hidden">
+            {experience.slice(0, 2).map((item) => (
+              <article key={`${item.org}-${item.dates}`} className="panel flex h-full flex-col p-5">
+                <p className="font-mono text-[11px] tracking-[0.16em] text-foreground/40">{item.dates}</p>
+                <h3 className="mt-5 text-2xl tracking-[-0.04em]">
+                  {item.title}
+                  <span className="text-muted-foreground"> · {item.org}</span>
+                </h3>
+                <p className="mt-2 max-w-md text-lg text-muted-foreground">{item.body}</p>
+                <p className="mt-5 text-sm text-lime">{item.place}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 hidden gap-4 md:grid">
             {experience.slice(0, 2).map((item, index) => (
               <Rise key={`${item.org}-${item.dates}`} delay={index * 0.05}>
                 <article className="panel grid gap-2 px-5 py-4 sm:grid-cols-12 sm:px-6 sm:py-5">
@@ -138,7 +151,29 @@ export default function AboutPage() {
             <p className="kicker text-lime">Also</p>
             <h2 className="display mt-4 text-4xl sm:text-6xl">In public.</h2>
           </Rise>
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div
+            aria-label="In public"
+            className="mt-12 flex snap-x snap-mandatory touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [scroll-padding-inline:0px] md:hidden [&::-webkit-scrollbar]:hidden"
+          >
+            {notes.map((note) => (
+              <article
+                key={note.title}
+                data-slide
+                className="panel flex w-[min(82%,20.5rem)] shrink-0 snap-start snap-always flex-col p-6 last:snap-end"
+              >
+                <h3 className="text-2xl tracking-[-0.04em]">{note.title}</h3>
+                <p className="mt-3 text-lg text-muted-foreground">{note.body}</p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  {note.links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="text-sm text-lime">
+                      {link.label} →
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 hidden gap-4 md:grid md:grid-cols-2">
             {notes.map((note, index) => (
               <Rise key={note.title} delay={index * 0.06} className="h-full min-w-0">
                 <article className="panel flex h-full flex-col p-6 sm:p-8">

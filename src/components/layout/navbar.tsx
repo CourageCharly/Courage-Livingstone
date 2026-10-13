@@ -207,7 +207,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={reduce ? undefined : { opacity: 0 }}
             transition={{ duration: 0.3, ease }}
-            className="fixed inset-0 z-[45] flex h-dvh min-h-dvh w-full flex-col bg-background px-[5%] pt-[4.75rem] pb-[max(1.25rem,env(safe-area-inset-bottom))] xl:px-[70px]"
+            className="fixed inset-0 z-[45] flex h-dvh w-full min-w-0 flex-col overflow-x-hidden overflow-y-auto bg-background px-[5%] pt-[4.75rem] pb-[max(1.25rem,env(safe-area-inset-bottom))] xl:px-[70px]"
           >
             <ul className="flex flex-1 flex-col justify-start gap-0 pt-2">
               {site.nav.map((item, index) => (
@@ -224,12 +224,12 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="space-y-5">
-              <div className="flex gap-2 overflow-x-auto pb-1">
+              <div className="flex min-w-0 touch-pan-x gap-2 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {navProjects.map((project) => (
                   <Link
                     key={project.slug}
                     href={`/work/${project.slug}`}
-                    className="w-28 shrink-0 overflow-hidden rounded-2xl"
+                    className="w-[5.4rem] shrink-0 overflow-hidden rounded-2xl min-[390px]:w-28"
                   >
                     <ProjectMedia
                       cover={project.cover}

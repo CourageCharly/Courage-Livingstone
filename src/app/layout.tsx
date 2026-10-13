@@ -32,7 +32,6 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  colorScheme: "dark",
   themeColor: "#070807",
 };
 
@@ -62,6 +61,9 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`dark ${space.variable} ${syne.variable} ${jetbrains.variable} ${space.className}`}
     >
+      <head>
+        <meta name="color-scheme" content="only light" />
+      </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <a
           href="#content"

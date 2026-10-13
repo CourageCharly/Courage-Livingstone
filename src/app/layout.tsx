@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import ScrollProgress from "@/components/shared/scroll-progress";
 import CustomCursor from "@/components/shared/custom-cursor";
+import AndroidPaint from "@/components/shared/android-paint";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
@@ -63,6 +64,11 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light only" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(/Android/i.test(navigator.userAgent)){var s=document.createElement("style");s.id="android-ink";s.textContent=".btn-ink{opacity:0!important}";document.head.appendChild(s);}`,
+          }}
+        />
         <style href="btn-lime-lock" precedence="high">{`
           .btn-lime,
           .btn-lime:hover,
@@ -76,21 +82,23 @@ export default function RootLayout({
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23c6f135'/%3E%3C/svg%3E"), linear-gradient(#c6f135, #c6f135);
             background-repeat: repeat, no-repeat;
             background-size: 2px 2px, 100% 100%;
-            color: #101408;
-            -webkit-text-fill-color: #101408;
+            color: #101408 !important;
+            -webkit-text-fill-color: #101408 !important;
             forced-color-adjust: none;
             filter: none;
           }
           .btn-ink {
-            color: transparent;
-            color-scheme: light only;
+            color: #101408 !important;
+            -webkit-text-fill-color: #101408 !important;
+            background-image: none;
             forced-color-adjust: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='2' height='2' fill='%23101408'/%3E%3C/svg%3E");
+          }
+          .banner-glow {
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='8' height='8' fill='%23c6f135' fill-opacity='0.15'/%3E%3C/svg%3E");
             background-repeat: repeat;
-            background-size: 2px 2px;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            filter: blur(64px);
+            forced-color-adjust: none;
           }
         `}</style>
       </head>
@@ -109,6 +117,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <AndroidPaint />
       </body>
     </html>
   );

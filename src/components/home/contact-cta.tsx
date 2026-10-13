@@ -10,7 +10,7 @@ const ContactCta = () => {
       <PageWrapper>
         <div className="panel relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10 md:hidden">
           <TechCorners />
-          <div className="pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full bg-lime/15 blur-3xl" />
+          <div className="banner-glow pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full" />
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Contact</p>
@@ -27,7 +27,7 @@ const ContactCta = () => {
         </div>
         <Rise className="panel relative hidden overflow-hidden px-6 py-8 sm:px-10 sm:py-10 md:block">
           <TechCorners />
-          <div className="pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full bg-lime/15 blur-3xl" />
+          <div className="banner-glow pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full" />
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
             <div className="min-w-0 flex-1">
               <p className="kicker text-lime">Contact</p>

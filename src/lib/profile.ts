@@ -48,6 +48,7 @@ export const pipeline = [
   "Design system",
   "React",
   "Next.js",
+  "Vibe Code",
   "Production",
 ] as const;
 

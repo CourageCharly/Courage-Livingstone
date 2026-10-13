@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ease } from "@/lib/motion";
-import { cn, fillsFrame, navProjects, site } from "@/lib";
+import { cn, navProjects, site } from "@/lib";
 import ProjectMedia from "@/components/work/project-media";
 
 const Navbar = () => {
@@ -127,11 +127,7 @@ const Navbar = () => {
                               cover={currentNav.cover}
                               title={currentNav.title}
                               className="absolute inset-0 h-full w-full !aspect-auto rounded-2xl border-0"
-                              imageClassName={
-                                fillsFrame(currentNav.slug)
-                                  ? "!object-cover object-center"
-                                  : "object-contain object-center"
-                              }
+                              imageClassName="!object-cover object-center"
                             />
                           </Link>
                           <ul className="flex flex-col justify-center py-1">
@@ -239,9 +235,7 @@ const Navbar = () => {
                       cover={project.cover}
                       title={project.title}
                       className="aspect-[4/3] border-0"
-                      imageClassName={
-                        fillsFrame(project.slug) ? "!object-cover object-center" : "object-contain object-center"
-                      }
+                      imageClassName="!object-cover object-center"
                     />
                   </Link>
                 ))}
